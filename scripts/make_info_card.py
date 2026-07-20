@@ -1,23 +1,6 @@
 import os
-import json
 
 STATIC = os.environ.get("STATIC") == "1"
-
-try:
-    with open("data/stats.json") as f:
-        stats = json.load(f)
-except FileNotFoundError:
-    stats = {}
-
-lc = stats.get("leetcode", {})
-cc = stats.get("codechef", {})
-gh = stats.get("github", {})
-
-lc_rating = lc.get("rating", 1781)
-lc_solved = lc.get("solved", 231)
-lc_contests = lc.get("contests", 24)
-cc_rating = cc.get("rating", 1337)
-repos = gh.get("public_repos", 12)
 
 WIDTH, HEIGHT = 490, 400
 PAD_X = 26
@@ -25,8 +8,7 @@ TITLE_H = 34
 ROW_H = 21
 START_Y = TITLE_H + 34
 
-# label, value, color -- Now/Prev/Languages are curated by hand; everything else
-# is pulled live from data/stats.json by fetch_stats.py
+# label, value, color -- pulled from resume + LeetCode/CodeChef/Codolio profiles
 ROWS = [
     ("OS",        "Final-Year CSE Student", "#79c0ff"),
     ("Host",      "Parul University", "#79c0ff"),
@@ -34,11 +16,11 @@ ROWS = [
     ("Now",       "Building UniBill (GST ERP)", "#7ee787"),
     ("Prev",      "CuraBot AI (Healthcare Chatbot)", "#7ee787"),
     ("Languages", "Java, Python, JS, C, SQL", "#d2a8ff"),
-    ("LeetCode",  f"{lc_rating} rating - {lc_solved} solved", "#ffa657"),
-    ("CodeChef",  f"{cc_rating} rating", "#ffa657"),
+    ("LeetCode",  "1781 rating - 231 solved", "#ffa657"),
+    ("CodeChef",  "1337 rating", "#ffa657"),
     ("Streak",    "22 current - 50 best", "#ff7b72"),
-    ("Contests",  f"{lc_contests + 9} total ({lc_contests} LC + 9 CC)", "#ff7b72"),
-    ("Packages",  f"{repos} public repos", "#a5d6ff"),
+    ("Contests",  "33 total (24 LC + 9 CC)", "#ff7b72"),
+    ("Packages",  "12 public repos", "#a5d6ff"),
 ]
 
 HEIGHT = START_Y + len(ROWS) * ROW_H + 30
