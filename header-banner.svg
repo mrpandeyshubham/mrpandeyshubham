@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#2196F3"/>
+      <stop offset="100%" stop-color="#9C27B0"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    </linearGradient>
+  </defs>
+  <style>
+    .band { fill: url(#bg); }
+    .wave { fill: url(#wave); }
+    .title {
+      fill: #ffffff; font: 700 46px 'Segoe UI', Helvetica, Arial, sans-serif;
+      opacity: 0; animation: fadeIn 1s ease-out 0.2s forwards;
+    }
+    .subtitle {
+      fill: #eef3ff; font: 400 18px 'Segoe UI', Helvetica, Arial, sans-serif;
+      opacity: 0; animation: fadeIn 1s ease-out 0.6s forwards;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; transform: translateY(8px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+  <rect class="band" x="0" y="0" width="1200" height="200"/>
+  <path class="wave" d="M0,200 L0,176.0 L0,176.0 L20,181.7 L40,186.4 L60,189.3 L80,189.9 L100,188.1 L120,184.2 L140,178.9 L160,173.1 L180,167.8 L200,163.9 L220,162.1 L240,162.7 L260,165.6 L280,170.3 L300,176.0 L320,181.7 L340,186.4 L360,189.3 L380,189.9 L400,188.1 L420,184.2 L440,178.9 L460,173.1 L480,167.8 L500,163.9 L520,162.1 L540,162.7 L560,165.6 L580,170.3 L600,176.0 L620,181.7 L640,186.4 L660,189.3 L680,189.9 L700,188.1 L720,184.2 L740,178.9 L760,173.1 L780,167.8 L800,163.9 L820,162.1 L840,162.7 L860,165.6 L880,170.3 L900,176.0 L920,181.7 L940,186.4 L960,189.3 L980,189.9 L1000,188.1 L1020,184.2 L1040,178.9 L1060,173.1 L1080,167.8 L1100,163.9 L1120,162.1 L1140,162.7 L1160,165.6 L1180,170.3 L1200,176.0 L1200,200 Z"/>
+  <text x="50%" y="42%" text-anchor="middle" class="title">Shubham Kumar Pandey</text>
+  <text x="50%" y="58%" text-anchor="middle" class="subtitle">Final-Year CSE Student | Full-Stack Developer | AI &amp; Cloud Enthusiast</text>
+</svg>

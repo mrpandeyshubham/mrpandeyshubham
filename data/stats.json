@@ -1,14 +1,16 @@
 {
-  "leetcode": {
-    "rating": 1782,
-    "solved": 223,
-    "contests": 24
-  },
-  "codechef": {
-    "rating": 1337
-  },
+  "leetcode": { "rating": 1781, "solved": 231, "contests": 24 },
+  "codechef": { "rating": 1337 },
   "github": {
-    "public_repos": 12,
-    "followers": 4
+    "public_repos": 13,
+    "followers": 4,
+    "total_stars": 4,
+    "languages": [
+      { "name": "JavaScript", "pct": 34.0 },
+      { "name": "HTML", "pct": 28.0 },
+      { "name": "Jupyter Notebook", "pct": 16.0 },
+      { "name": "CSS", "pct": 12.0 },
+      { "name": "Python", "pct": 10.0 }
+    ]
   }
 }

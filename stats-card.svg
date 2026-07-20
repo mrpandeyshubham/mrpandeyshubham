@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="490" height="288" viewBox="0 0 490 288">
+  <style>
+    .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
+    .titlebar { fill: #161b22; }
+    .path { fill: #8b949e; font: 12px 'Fira Code', monospace; }
+    .stat-value { font: 700 26px 'Fira Code', monospace; }
+    .stat-label { fill: #8b949e; font: 11px 'Segoe UI', sans-serif; }
+    .lang-name { fill: #c9d1d9; font: 13px 'Segoe UI', sans-serif; }
+    .lang-pct { fill: #8b949e; font: 12px 'Fira Code', monospace; }
+    .stat-block, .lang-row { opacity: 0; animation: fadeIn 0.5s ease-out forwards; }
+    .lang-bar { transform-origin: left; transform: scaleX(0); animation: growBar 0.6s ease-out forwards; }
+    @keyframes fadeIn { to { opacity: 1; } }
+    @keyframes growBar { to { transform: scaleX(1); } }
+  </style>
+  <rect class="bg" x="0.5" y="0.5" width="489" height="287" rx="8"/>
+  <rect class="titlebar" x="0" y="0" width="490" height="34" rx="8"/>
+  <rect x="0" y="26" width="490" height="8" fill="#161b22"/>
+  <circle cx="20" cy="17" r="6" fill="#ff5f56"/>
+  <circle cx="40" cy="17" r="6" fill="#ffbd2e"/>
+  <circle cx="60" cy="17" r="6" fill="#27c93f"/>
+  <text x="245.0" y="21" text-anchor="middle" class="path">mrpandeyshubham@github ~ $ ./analytics.sh</text>
+  
+  <g class="stat-block" style="animation-delay:0.10s">
+    <text x="99.0" y="78" text-anchor="middle" class="stat-value" fill="#79c0ff">13</text>
+    <text x="99.0" y="96" text-anchor="middle" class="stat-label">Public Repos</text>
+  </g>
+  <g class="stat-block" style="animation-delay:0.20s">
+    <text x="245.0" y="78" text-anchor="middle" class="stat-value" fill="#7ee787">4</text>
+    <text x="245.0" y="96" text-anchor="middle" class="stat-label">Followers</text>
+  </g>
+  <g class="stat-block" style="animation-delay:0.30s">
+    <text x="391.0" y="78" text-anchor="middle" class="stat-value" fill="#ffa657">4</text>
+    <text x="391.0" y="96" text-anchor="middle" class="stat-label">Total Stars</text>
+  </g>
+  <line x1="26" y1="108" x2="464" y2="108" stroke="#21262d"/>
+  
+  <g class="lang-row" style="animation-delay:0.40s">
+    <circle cx="30" cy="124" r="5" fill="#f1e05a"/>
+    <text x="42" y="128" class="lang-name">JavaScript</text>
+    <rect x="166" y="117" width="288" height="8" rx="4" fill="#21262d"/>
+    <rect class="lang-bar" x="166" y="117" width="97.9" height="8" rx="4" fill="#f1e05a" style="animation-delay:0.40s"/>
+    <text x="464" y="128" text-anchor="end" class="lang-pct">34.0%</text>
+  </g>
+  <g class="lang-row" style="animation-delay:0.48s">
+    <circle cx="30" cy="150" r="5" fill="#e34c26"/>
+    <text x="42" y="154" class="lang-name">HTML</text>
+    <rect x="166" y="143" width="288" height="8" rx="4" fill="#21262d"/>
+    <rect class="lang-bar" x="166" y="143" width="80.6" height="8" rx="4" fill="#e34c26" style="animation-delay:0.48s"/>
+    <text x="464" y="154" text-anchor="end" class="lang-pct">28.0%</text>
+  </g>
+  <g class="lang-row" style="animation-delay:0.56s">
+    <circle cx="30" cy="176" r="5" fill="#DA5B0B"/>
+    <text x="42" y="180" class="lang-name">Jupyter Notebook</text>
+    <rect x="166" y="169" width="288" height="8" rx="4" fill="#21262d"/>
+    <rect class="lang-bar" x="166" y="169" width="46.1" height="8" rx="4" fill="#DA5B0B" style="animation-delay:0.56s"/>
+    <text x="464" y="180" text-anchor="end" class="lang-pct">16.0%</text>
+  </g>
+  <g class="lang-row" style="animation-delay:0.64s">
+    <circle cx="30" cy="202" r="5" fill="#563d7c"/>
+    <text x="42" y="206" class="lang-name">CSS</text>
+    <rect x="166" y="195" width="288" height="8" rx="4" fill="#21262d"/>
+    <rect class="lang-bar" x="166" y="195" width="34.6" height="8" rx="4" fill="#563d7c" style="animation-delay:0.64s"/>
+    <text x="464" y="206" text-anchor="end" class="lang-pct">12.0%</text>
+  </g>
+  <g class="lang-row" style="animation-delay:0.72s">
+    <circle cx="30" cy="228" r="5" fill="#3572A5"/>
+    <text x="42" y="232" class="lang-name">Python</text>
+    <rect x="166" y="221" width="288" height="8" rx="4" fill="#21262d"/>
+    <rect class="lang-bar" x="166" y="221" width="28.8" height="8" rx="4" fill="#3572A5" style="animation-delay:0.72s"/>
+    <text x="464" y="232" text-anchor="end" class="lang-pct">10.0%</text>
+  </g>
+</svg>
