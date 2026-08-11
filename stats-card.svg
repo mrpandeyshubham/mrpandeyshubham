@@ -21,7 +21,7 @@
   <text x="245.0" y="21" text-anchor="middle" class="path">mrpandeyshubham@github ~ $ ./analytics.sh</text>
   
   <g class="stat-block" style="animation-delay:0.10s">
-    <text x="99.0" y="78" text-anchor="middle" class="stat-value" fill="#79c0ff">12</text>
+    <text x="99.0" y="78" text-anchor="middle" class="stat-value" fill="#79c0ff">13</text>
     <text x="99.0" y="96" text-anchor="middle" class="stat-label">Public Repos</text>
   </g>
   <g class="stat-block" style="animation-delay:0.20s">
