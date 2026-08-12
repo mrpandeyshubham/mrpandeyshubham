@@ -38,21 +38,21 @@
     <circle cx="30" cy="124" r="5" fill="#3572A5"/>
     <text x="42" y="128" class="lang-name">Python</text>
     <rect x="166" y="117" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="117" width="278.5" height="8" rx="4" fill="#3572A5" style="animation-delay:0.40s"/>
-    <text x="464" y="128" text-anchor="end" class="lang-pct">96.7%</text>
+    <rect class="lang-bar" x="166" y="117" width="277.6" height="8" rx="4" fill="#3572A5" style="animation-delay:0.40s"/>
+    <text x="464" y="128" text-anchor="end" class="lang-pct">96.4%</text>
   </g>
   <g class="lang-row" style="animation-delay:0.48s">
-    <circle cx="30" cy="150" r="5" fill="#555555"/>
-    <text x="42" y="154" class="lang-name">C</text>
+    <circle cx="30" cy="150" r="5" fill="#f1e05a"/>
+    <text x="42" y="154" class="lang-name">JavaScript</text>
     <rect x="166" y="143" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="143" width="3.2" height="8" rx="4" fill="#555555" style="animation-delay:0.48s"/>
+    <rect class="lang-bar" x="166" y="143" width="3.2" height="8" rx="4" fill="#f1e05a" style="animation-delay:0.48s"/>
     <text x="464" y="154" text-anchor="end" class="lang-pct">1.1%</text>
   </g>
   <g class="lang-row" style="animation-delay:0.56s">
-    <circle cx="30" cy="176" r="5" fill="#f1e05a"/>
-    <text x="42" y="180" class="lang-name">JavaScript</text>
+    <circle cx="30" cy="176" r="5" fill="#555555"/>
+    <text x="42" y="180" class="lang-name">C</text>
     <rect x="166" y="169" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="169" width="3.2" height="8" rx="4" fill="#f1e05a" style="animation-delay:0.56s"/>
+    <rect class="lang-bar" x="166" y="169" width="3.2" height="8" rx="4" fill="#555555" style="animation-delay:0.56s"/>
     <text x="464" y="180" text-anchor="end" class="lang-pct">1.1%</text>
   </g>
   <g class="lang-row" style="animation-delay:0.64s">
@@ -63,17 +63,17 @@
     <text x="464" y="206" text-anchor="end" class="lang-pct">0.3%</text>
   </g>
   <g class="lang-row" style="animation-delay:0.72s">
-    <circle cx="30" cy="228" r="5" fill="#f34b7d"/>
-    <text x="42" y="232" class="lang-name">C++</text>
+    <circle cx="30" cy="228" r="5" fill="#3178c6"/>
+    <text x="42" y="232" class="lang-name">TypeScript</text>
     <rect x="166" y="221" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="221" width="0.6" height="8" rx="4" fill="#f34b7d" style="animation-delay:0.72s"/>
-    <text x="464" y="232" text-anchor="end" class="lang-pct">0.2%</text>
+    <rect class="lang-bar" x="166" y="221" width="0.9" height="8" rx="4" fill="#3178c6" style="animation-delay:0.72s"/>
+    <text x="464" y="232" text-anchor="end" class="lang-pct">0.3%</text>
   </g>
   <g class="lang-row" style="animation-delay:0.80s">
-    <circle cx="30" cy="254" r="5" fill="#e34c26"/>
-    <text x="42" y="258" class="lang-name">HTML</text>
+    <circle cx="30" cy="254" r="5" fill="#f34b7d"/>
+    <text x="42" y="258" class="lang-name">C++</text>
     <rect x="166" y="247" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="247" width="0.6" height="8" rx="4" fill="#e34c26" style="animation-delay:0.80s"/>
+    <rect class="lang-bar" x="166" y="247" width="0.6" height="8" rx="4" fill="#f34b7d" style="animation-delay:0.80s"/>
     <text x="464" y="258" text-anchor="end" class="lang-pct">0.2%</text>
   </g>
 </svg>

@@ -1,11 +1,11 @@
 {
   "leetcode": {
     "rating": 1753,
-    "solved": 234,
+    "solved": 235,
     "contests": 25
   },
   "codechef": {
-    "rating": 1407
+    "rating": 1392
   },
   "github": {
     "public_repos": 13,
@@ -14,14 +14,14 @@
     "languages": [
       {
         "name": "Python",
-        "pct": 96.7
-      },
-      {
-        "name": "C",
-        "pct": 1.1
+        "pct": 96.4
       },
       {
         "name": "JavaScript",
+        "pct": 1.1
+      },
+      {
+        "name": "C",
         "pct": 1.1
       },
       {
@@ -29,11 +29,11 @@
         "pct": 0.3
       },
       {
-        "name": "C++",
-        "pct": 0.2
+        "name": "TypeScript",
+        "pct": 0.3
       },
       {
-        "name": "HTML",
+        "name": "C++",
         "pct": 0.2
       }
     ]
