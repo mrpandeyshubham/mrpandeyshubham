@@ -25,7 +25,7 @@
     <text x="99.0" y="96" text-anchor="middle" class="stat-label">Public Repos</text>
   </g>
   <g class="stat-block" style="animation-delay:0.20s">
-    <text x="245.0" y="78" text-anchor="middle" class="stat-value" fill="#7ee787">4</text>
+    <text x="245.0" y="78" text-anchor="middle" class="stat-value" fill="#7ee787">5</text>
     <text x="245.0" y="96" text-anchor="middle" class="stat-label">Followers</text>
   </g>
   <g class="stat-block" style="animation-delay:0.30s">
