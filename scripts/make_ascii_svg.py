@@ -1,5 +1,5 @@
 WIDTH = 360
-HEIGHT = 360
+HEIGHT = 390
 TITLE_H = 38
 
 LETTERS = {
@@ -38,18 +38,18 @@ LETTER_COLORS = {
     "P": "#3fb950",  # emerald
 }
 
-CELL = 13
+CELL = 12
 GAP = 3
 STEP = CELL + GAP
 LETTER_GAP_COLS = 2
 TOTAL_COLS = 5 * 3 + LETTER_GAP_COLS * 2  # 19 cols
-GRID_W = TOTAL_COLS * CELL + (TOTAL_COLS - 1) * GAP  # 301px
+GRID_W = TOTAL_COLS * CELL + (TOTAL_COLS - 1) * GAP  # 282px
 START_X = (WIDTH - GRID_W) / 2
-START_Y = TITLE_H + 26
+START_Y = TITLE_H + 18
 
 blocks = []
 col_offset = 0
-for idx, ch in enumerate(("S", "K", "P")):
+for ch in ("S", "K", "P"):
     bitmap = LETTERS[ch]
     color = LETTER_COLORS[ch]
     for r, row in enumerate(bitmap):
@@ -69,7 +69,7 @@ for idx, ch in enumerate(("S", "K", "P")):
                 )
     col_offset += 5 + LETTER_GAP_COLS
 
-NAME_Y = START_Y + 7 * STEP + 32
+NAME_Y = START_Y + 7 * STEP + 26
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
   <style>
@@ -83,7 +83,7 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGH
     }}
     .name {{
       fill: #f0f6fc;
-      font: 700 19px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+      font: 700 18.5px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
       letter-spacing: -0.2px;
     }}
     .handle {{
@@ -92,11 +92,15 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGH
     }}
     .cmd {{
       fill: #3fb950;
-      font: 700 13px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+      font: 700 12.5px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
     }}
     .out {{
       fill: #e6edf3;
-      font: 500 13px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+      font: 500 12.5px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    }}
+    .muted {{
+      fill: #c9d1d9;
+      font: 500 12.5px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
     }}
   </style>
   <rect class="bg" x="0.5" y="0.5" width="{WIDTH-1}" height="{HEIGHT-1}" rx="10"/>
@@ -111,14 +115,18 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGH
   {''.join(blocks)}
 
   <text x="{WIDTH/2}" y="{NAME_Y}" text-anchor="middle" class="name">Shubham Kumar Pandey</text>
-  <text x="{WIDTH/2}" y="{NAME_Y + 22}" text-anchor="middle" class="handle">@mrpandeyshubham</text>
+  <text x="{WIDTH/2}" y="{NAME_Y + 21}" text-anchor="middle" class="handle">@mrpandeyshubham</text>
 
-  <line x1="26" y1="{NAME_Y + 38}" x2="{WIDTH - 26}" y2="{NAME_Y + 38}" stroke="#21262d"/>
+  <line x1="26" y1="{NAME_Y + 35}" x2="{WIDTH - 26}" y2="{NAME_Y + 35}" stroke="#21262d"/>
 
-  <text x="28" y="{NAME_Y + 62}" class="cmd">$ focus</text>
-  <text x="98" y="{NAME_Y + 62}" class="out">MERN · CV · RAG AI</text>
-  <text x="28" y="{NAME_Y + 86}" class="cmd">$ status</text>
-  <text x="98" y="{NAME_Y + 86}" class="out">Open to SDE Roles</text>
+  <text x="28" y="{NAME_Y + 58}" class="cmd">$ whoami</text>
+  <text x="28" y="{NAME_Y + 77}" class="out">Shubham Kumar Pandey (SKP)</text>
+
+  <text x="28" y="{NAME_Y + 104}" class="cmd">$ focus --current</text>
+  <text x="28" y="{NAME_Y + 123}" class="out">MERN · Computer Vision · RAG AI</text>
+
+  <text x="28" y="{NAME_Y + 150}" class="cmd">$ status</text>
+  <text x="28" y="{NAME_Y + 169}" class="muted">India · Open to SDE Opportunities</text>
 </svg>
 '''
 

@@ -31,10 +31,10 @@ cur_streak = contrib.get("current_streak", 0)
 best_streak = contrib.get("longest_streak", 0)
 updated_at = (contrib.get("updated_at") or stats.get("updated_at") or "")[:10] or "live"
 
-WIDTH, HEIGHT = 506, 360
+WIDTH, HEIGHT = 506, 390
 PAD_X = 24
 TITLE_H = 38
-ROW_H = 24
+ROW_H = 26
 START_Y = TITLE_H + 34
 
 ROWS = [
@@ -66,7 +66,7 @@ for i, (label, value, color) in enumerate(ROWS):
     )
 
 bar_colors = ["#ff5f56", "#ffbd2e", "#3fb950", "#38bdf8", "#a371f7", "#f778ba", "#5ee6c9", "#ffa657"]
-bar_y = HEIGHT - 24
+bar_y = HEIGHT - 28
 bars = "".join(
     f'<rect x="{PAD_X + i * 16}" y="{bar_y}" width="12" height="10" rx="2.5" fill="{c}"/>'
     for i, c in enumerate(bar_colors)
