@@ -32,11 +32,9 @@ LETTERS = {
     ],
 }
 
-LETTER_COLORS = {
-    "S": "#38bdf8",  # cyan
-    "K": "#a371f7",  # violet
-    "P": "#3fb950",  # emerald
-}
+# GitHub contribution heatmap palette: Less (level 0) -> More (level 4)
+GH_EMPTY = "#161b22"
+GH_GREENS = ["#0e4429", "#006d32", "#26a641", "#39d353"]
 
 CELL = 12
 GAP = 3
@@ -49,23 +47,27 @@ START_Y = TITLE_H + 18
 
 blocks = []
 col_offset = 0
+max_diag = (TOTAL_COLS - 1) + 6 * 0.6
 for ch in ("S", "K", "P"):
     bitmap = LETTERS[ch]
-    color = LETTER_COLORS[ch]
     for r, row in enumerate(bitmap):
         for c, bit in enumerate(row):
-            x = START_X + (col_offset + c) * STEP
+            col_abs = col_offset + c
+            x = START_X + col_abs * STEP
             y = START_Y + r * STEP
             if bit == "1":
-                delay = (col_offset + c) * 0.035 + r * 0.02
+                diag = col_abs + r * 0.6
+                idx = min(len(GH_GREENS) - 1, int((diag / max_diag) * len(GH_GREENS)))
+                color = GH_GREENS[idx]
+                delay = col_abs * 0.035 + r * 0.02
                 blocks.append(
                     f'<rect class="blk" x="{x:.1f}" y="{y:.1f}" width="{CELL}" height="{CELL}" '
-                    f'rx="3" fill="{color}" style="animation-delay:{delay:.2f}s"/>'
+                    f'rx="3" fill="{color}" stroke="#1b2028" stroke-width="0.6" style="animation-delay:{delay:.2f}s"/>'
                 )
             else:
                 blocks.append(
                     f'<rect x="{x:.1f}" y="{y:.1f}" width="{CELL}" height="{CELL}" '
-                    f'rx="3" fill="#161b22" opacity="0.55"/>'
+                    f'rx="3" fill="{GH_EMPTY}" stroke="#1b2028" stroke-width="0.6" opacity="0.75"/>'
                 )
     col_offset += 5 + LETTER_GAP_COLS
 
