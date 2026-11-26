@@ -1,11 +1,13 @@
 {
   "leetcode": {
     "rating": 1753,
+    "max_rating": 1781,
     "solved": 296,
     "contests": 25
   },
   "codechef": {
-    "rating": 1431
+    "rating": 1431,
+    "contests": 12
   },
   "github": {
     "public_repos": 13,

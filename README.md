@@ -29,7 +29,7 @@
 <table>
   <tr>
     <td valign="top"><img src="./skp-monogram.svg?v=4" width="360" alt="SKP terminal monogram" /></td>
-    <td valign="top"><img src="./info-card.svg?v=3" width="506" alt="Live neofetch developer profile card" /></td>
+    <td valign="top"><img src="./info-card.svg?v=5" width="506" alt="Live neofetch developer profile card" /></td>
   </tr>
 </table>
 
@@ -39,7 +39,7 @@
 
 <img src="./contrib-heatmap.svg" width="866" alt="Real-time GitHub contribution heatmap" />
 <br />
-<img src="./stats-card.svg" width="866" alt="GitHub analytics, competitive programming stats, and language breakdown" />
+<img src="./stats-card.svg?v=5" width="866" alt="GitHub analytics, competitive programming stats, and language breakdown" />
 <br />
 <sub>100% self-hosted SVGs — automatically synced every 4 hours by <a href="./.github/workflows/update-profile-art.yml">GitHub Actions</a> from live GitHub, LeetCode &amp; CodeChef data.</sub>
 
@@ -142,7 +142,7 @@
 
 | Category | Highlights |
 | --- | --- |
-| **Competitive Programming** | **LeetCode:** 1753 rating · 296+ solved · 25 contests &nbsp;|&nbsp; **CodeChef:** 1431 rating · 9+ contests &nbsp;|&nbsp; Tracked on [Codolio](https://codolio.com/profile/ShubhamPandey) |
+| **Competitive Programming** | **LeetCode:** 1753 rating (max 1781) · 296+ solved · 25 contests &nbsp;|&nbsp; **CodeChef:** 1431 rating (2★) · 12 contests &nbsp;|&nbsp; **379 questions solved** across **37 contests** &amp; **242 active days** (max 50-day streak) on [Codolio](https://codolio.com/profile/ShubhamPandey) |
 | **Hackathons** | 🏅 **Vadodara Hackathon 6.0 (2025)** — CuraBot AI &nbsp;·&nbsp; 🏅 **Build With India (2025)** &amp; **Hack The Mountains 5.0 (2024)** |
 | **Certifications** | AI Fundamentals with IBM SkillsBuild (Cisco) &nbsp;·&nbsp; React.js Web Development (Parul University) &nbsp;·&nbsp; Java Technology Stack (Infosys Springboard) |
 

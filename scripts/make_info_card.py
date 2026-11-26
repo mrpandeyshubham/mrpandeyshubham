@@ -21,9 +21,11 @@ cc = stats.get("codechef", {})
 gh = stats.get("github", {})
 
 lc_rating = lc.get("rating", 1753)
+lc_max = max(lc_rating, lc.get("max_rating", 1781))
 lc_solved = lc.get("solved", 296)
 lc_contests = lc.get("contests", 25)
 cc_rating = cc.get("rating", 1431)
+cc_contests = cc.get("contests", 12)
 repos = gh.get("public_repos", 13)
 
 total_contribs = contrib.get("total_contributions", 280)
@@ -34,8 +36,8 @@ updated_at = (contrib.get("updated_at") or stats.get("updated_at") or "")[:10] o
 WIDTH, HEIGHT = 506, 390
 PAD_X = 24
 TITLE_H = 38
-ROW_H = 26
-START_Y = TITLE_H + 34
+ROW_H = 24
+START_Y = TITLE_H + 30
 
 ROWS = [
     ("Role",       "Final-Year CSE · Full-Stack & AI", "#79c0ff"),
@@ -44,10 +46,11 @@ ROWS = [
     ("Stack",      "Python, JS/TS, React, Node, Mongo", "#d2a8ff"),
     ("AI & CV",    "OpenCV, MediaPipe, Watsonx.ai, RAG", "#d2a8ff"),
     ("Cloud",      "IBM Cloud, GCP, Docker, GH Actions", "#a5d6ff"),
-    ("LeetCode",   f"{lc_rating} rating · {lc_solved} solved ({lc_contests}c)", "#ffa657"),
-    ("CodeChef",   f"{cc_rating} rating · 9+ contests", "#ffa657"),
+    ("LeetCode",   f"{lc_rating} (max {lc_max}) · {lc_solved} solved · {lc_contests}c", "#ffa657"),
+    ("CodeChef",   f"{cc_rating} rating (2★) · {cc_contests} contests", "#ffa657"),
+    ("Codolio",    "379 solved · 37 contests · 242d active", "#f778ba"),
     ("GitHub",     f"{repos} repos · {total_contribs} contribs (1y)", "#3fb950"),
-    ("Streak",     f"{cur_streak}d current · {best_streak}d longest", "#ff7b72"),
+    ("Streak",     f"{cur_streak}d GH · 50d best (Codolio)", "#ff7b72"),
     ("Synced",     f"{updated_at} (automated daily)", "#8b949e"),
 ]
 

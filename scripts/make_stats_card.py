@@ -22,7 +22,9 @@ followers = gh.get("followers", 4)
 total_contribs = contrib.get("total_contributions", 280)
 lc_solved = lc.get("solved", 296)
 lc_rating = lc.get("rating", 1753)
+lc_contests = lc.get("contests", 25)
 cc_rating = cc.get("rating", 1431)
+cc_contests = cc.get("contests", 12)
 
 languages = gh.get("languages") or [
     {"name": "JavaScript", "pct": 38.0},
@@ -58,8 +60,8 @@ HEIGHT = max(246, TITLE_H + 48 + len(languages) * ROW_H + 24)
 tiles = [
     ("Public Repos", f"{repos}", f"{followers} followers", "#58a6ff"),
     ("Contributions (1Y)", f"{total_contribs}", f"{contrib.get('active_days', 0)} active days", "#3fb950"),
-    ("LeetCode", f"{lc_solved} solved", f"{lc_rating} rating", "#ffa657"),
-    ("CodeChef", f"{cc_rating}", "competitive rating", "#a371f7"),
+    ("LeetCode", f"{lc_solved} solved", f"{lc_rating} rating · {lc_contests}c", "#ffa657"),
+    ("CodeChef", f"{cc_rating}", f"2★ · {cc_contests} contests", "#a371f7"),
 ]
 
 tiles_svg = ""
