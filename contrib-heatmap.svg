@@ -32,7 +32,7 @@
     <rect x="24.0" y="48" width="194.5" height="34" rx="7" fill="#161b22" stroke="#21262d"/>
     <circle cx="38.0" cy="65" r="3.5" fill="#3fb950"/>
     <text x="48.0" y="69" class="kpi-lbl">Total (1Y):</text>
-    <text x="206.5" y="69" text-anchor="end" class="kpi-val" fill="#3fb950">285</text>
+    <text x="206.5" y="69" text-anchor="end" class="kpi-val" fill="#3fb950">287</text>
   </g>
   <g>
     <rect x="228.5" y="48" width="194.5" height="34" rx="7" fill="#161b22" stroke="#21262d"/>
@@ -187,7 +187,7 @@
 <rect class="cell" x="281.2" y="177.5" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.211s"/>
 <rect class="cell" x="281.2" y="192.2" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.212s"/>
 <rect class="cell" x="295.9" y="104.0" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.214s"/>
-<rect class="cell" x="295.9" y="118.7" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#26a641" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.216s"/>
+<rect class="cell" x="295.9" y="118.7" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#006d32" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.216s"/>
 <rect class="cell" x="295.9" y="133.4" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.218s"/>
 <rect class="cell" x="295.9" y="148.1" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.220s"/>
 <rect class="cell" x="295.9" y="162.8" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.221s"/>
@@ -198,7 +198,7 @@
 <rect class="cell" x="310.6" y="133.4" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#006d32" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.230s"/>
 <rect class="cell" x="310.6" y="148.1" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.232s"/>
 <rect class="cell" x="310.6" y="162.8" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.234s"/>
-<rect class="cell" x="310.6" y="177.5" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#26a641" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.236s"/>
+<rect class="cell" x="310.6" y="177.5" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#006d32" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.236s"/>
 <rect class="cell" x="310.6" y="192.2" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.238s"/>
 <rect class="cell" x="325.3" y="104.0" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.239s"/>
 <rect class="cell" x="325.3" y="118.7" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.241s"/>
@@ -254,10 +254,10 @@
 <rect class="cell" x="428.2" y="133.4" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.331s"/>
 <rect class="cell" x="428.2" y="148.1" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#26a641" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.333s"/>
 <rect class="cell" x="428.2" y="162.8" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.335s"/>
-<rect class="cell" x="428.2" y="177.5" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#39d353" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.337s"/>
+<rect class="cell" x="428.2" y="177.5" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#26a641" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.337s"/>
 <rect class="cell" x="428.2" y="192.2" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.338s"/>
 <rect class="cell" x="442.9" y="104.0" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.340s"/>
-<rect class="cell" x="442.9" y="118.7" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#39d353" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.342s"/>
+<rect class="cell" x="442.9" y="118.7" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#26a641" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.342s"/>
 <rect class="cell" x="442.9" y="133.4" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#006d32" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.344s"/>
 <rect class="cell" x="442.9" y="148.1" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.346s"/>
 <rect class="cell" x="442.9" y="162.8" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.347s"/>
@@ -330,7 +330,7 @@
 <rect class="cell" x="589.9" y="118.7" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.468s"/>
 <rect class="cell" x="589.9" y="133.4" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#006d32" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.470s"/>
 <rect class="cell" x="589.9" y="148.1" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#39d353" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.472s"/>
-<rect class="cell" x="589.9" y="162.8" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#26a641" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.473s"/>
+<rect class="cell" x="589.9" y="162.8" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#006d32" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.473s"/>
 <rect class="cell" x="589.9" y="177.5" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.475s"/>
 <rect class="cell" x="589.9" y="192.2" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.477s"/>
 <rect class="cell" x="604.6" y="104.0" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.479s"/>
@@ -389,7 +389,7 @@
 <rect class="cell" x="707.5" y="162.8" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.574s"/>
 <rect class="cell" x="707.5" y="177.5" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.576s"/>
 <rect class="cell" x="707.5" y="192.2" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#006d32" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.578s"/>
-<rect class="cell" x="722.2" y="104.0" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#26a641" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.580s"/>
+<rect class="cell" x="722.2" y="104.0" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#006d32" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.580s"/>
 <rect class="cell" x="722.2" y="118.7" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.581s"/>
 <rect class="cell" x="722.2" y="133.4" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#006d32" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.583s"/>
 <rect class="cell" x="722.2" y="148.1" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.585s"/>
