@@ -1,32 +1,97 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="200" viewBox="0 0 1200 200">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="260" viewBox="0 0 1200 260">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#2196F3"/>
-      <stop offset="100%" stop-color="#9C27B0"/>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b101b"/>
+      <stop offset="50%" stop-color="#0d1117"/>
+      <stop offset="100%" stop-color="#111827"/>
     </linearGradient>
-    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.12"/>
-      <stop offset="100%" stop-color="#ffffff" stop-opacity="0.05"/>
+    <radialGradient id="orbCyan" cx="18%" cy="22%" r="48%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.24"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbViolet" cx="84%" cy="24%" r="46%">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.22"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="orbEmerald" cx="52%" cy="88%" r="42%">
+      <stop offset="0%" stop-color="#10b981" stop-opacity="0.16"/>
+      <stop offset="100%" stop-color="#10b981" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accentLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="50%" stop-color="#818cf8"/>
+      <stop offset="100%" stop-color="#34d399"/>
     </linearGradient>
+    <linearGradient id="waveGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.14"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0.14"/>
+    </linearGradient>
+    <linearGradient id="waveGrad2" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#34d399" stop-opacity="0.10"/>
+      <stop offset="100%" stop-color="#38bdf8" stop-opacity="0.12"/>
+    </linearGradient>
+    <pattern id="dots" width="24" height="24" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1" fill="#30363d" opacity="0.65"/>
+    </pattern>
   </defs>
+
   <style>
-    .band { fill: url(#bg); }
-    .wave { fill: url(#wave); }
     .title {
-      fill: #ffffff; font: 700 46px 'Segoe UI', Helvetica, Arial, sans-serif;
-      opacity: 0; animation: fadeIn 1s ease-out 0.2s forwards;
+      fill: #f0f6fc;
+      font: 700 44px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+      letter-spacing: -0.5px;
+      opacity: 0;
+      animation: fadeUp 0.7s ease-out 0.15s forwards;
     }
     .subtitle {
-      fill: #eef3ff; font: 400 18px 'Segoe UI', Helvetica, Arial, sans-serif;
-      opacity: 0; animation: fadeIn 1s ease-out 0.6s forwards;
+      fill: #c9d1d9;
+      font: 500 17px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+      opacity: 0;
+      animation: fadeUp 0.7s ease-out 0.35s forwards;
     }
-    @keyframes fadeIn {
+    .meta {
+      fill: #8b949e;
+      font: 500 13px 'JetBrains Mono', 'Fira Code', ui-monospace, Menlo, Consolas, monospace;
+      opacity: 0;
+      animation: fadeUp 0.7s ease-out 0.55s forwards;
+    }
+    .pill-text {
+      fill: #c9d1d9;
+      font: 600 11.5px 'JetBrains Mono', 'Fira Code', ui-monospace, Menlo, Consolas, monospace;
+      letter-spacing: 0.6px;
+    }
+    .pulse {
+      animation: pulseDot 2.2s ease-in-out infinite;
+    }
+    @keyframes fadeUp {
       0% { opacity: 0; transform: translateY(8px); }
       100% { opacity: 1; transform: translateY(0); }
     }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
   </style>
-  <rect class="band" x="0" y="0" width="1200" height="200"/>
-  <path class="wave" d="M0,200 L0,176.0 L0,176.0 L20,181.7 L40,186.4 L60,189.3 L80,189.9 L100,188.1 L120,184.2 L140,178.9 L160,173.1 L180,167.8 L200,163.9 L220,162.1 L240,162.7 L260,165.6 L280,170.3 L300,176.0 L320,181.7 L340,186.4 L360,189.3 L380,189.9 L400,188.1 L420,184.2 L440,178.9 L460,173.1 L480,167.8 L500,163.9 L520,162.1 L540,162.7 L560,165.6 L580,170.3 L600,176.0 L620,181.7 L640,186.4 L660,189.3 L680,189.9 L700,188.1 L720,184.2 L740,178.9 L760,173.1 L780,167.8 L800,163.9 L820,162.1 L840,162.7 L860,165.6 L880,170.3 L900,176.0 L920,181.7 L940,186.4 L960,189.3 L980,189.9 L1000,188.1 L1020,184.2 L1040,178.9 L1060,173.1 L1080,167.8 L1100,163.9 L1120,162.1 L1140,162.7 L1160,165.6 L1180,170.3 L1200,176.0 L1200,200 Z"/>
-  <text x="50%" y="42%" text-anchor="middle" class="title">Shubham Kumar Pandey</text>
-  <text x="50%" y="58%" text-anchor="middle" class="subtitle">Final-Year CSE Student | Full-Stack Developer | AI &amp; Cloud Enthusiast</text>
+
+  <rect x="0.5" y="0.5" width="1199" height="259" rx="14" fill="url(#bgGrad)" stroke="#30363d"/>
+  <rect x="1" y="1" width="1198" height="258" rx="14" fill="url(#dots)"/>
+  <rect x="1" y="1" width="1198" height="258" rx="14" fill="url(#orbCyan)"/>
+  <rect x="1" y="1" width="1198" height="258" rx="14" fill="url(#orbViolet)"/>
+  <rect x="1" y="1" width="1198" height="258" rx="14" fill="url(#orbEmerald)"/>
+
+  <rect x="120" y="1" width="960" height="2.5" rx="1.25" fill="url(#accentLine)" opacity="0.85"/>
+
+  <g transform="translate(465, 34)">
+    <rect x="0" y="0" width="270" height="28" rx="14" fill="#161b22" fill-opacity="0.9" stroke="#30363d"/>
+    <circle class="pulse" cx="18" cy="14" r="4.5" fill="#3fb950"/>
+    <text x="31" y="18" class="pill-text">OPEN TO SDE &amp; AI/ML ROLES</text>
+  </g>
+
+  <text x="50%" y="114" text-anchor="middle" class="title">Shubham Kumar Pandey</text>
+  <text x="50%" y="150" text-anchor="middle" class="subtitle">Full-Stack Engineer (MERN / TypeScript)  ·  Computer Vision &amp; Applied AI  ·  Cloud &amp; DevOps</text>
+  <text x="50%" y="188" text-anchor="middle" class="meta">B.Tech CSE '27 (Parul University)   •   TrueEyeball · UniBill · BachatPay AI   •   IBM SkillsBuild AI Intern</text>
+
+  <path fill="url(#waveGrad1)" d="M0,260 L0,232.0 L0,232.0 L20,236.1 L40,239.7 L60,242.4 L80,243.8 L100,243.8 L120,242.4 L140,239.7 L160,236.1 L180,232.0 L200,227.9 L220,224.3 L240,221.6 L260,220.2 L280,220.2 L300,221.6 L320,224.3 L340,227.9 L360,232.0 L380,236.1 L400,239.7 L420,242.4 L440,243.8 L460,243.8 L480,242.4 L500,239.7 L520,236.1 L540,232.0 L560,227.9 L580,224.3 L600,221.6 L620,220.2 L640,220.2 L660,221.6 L680,224.3 L700,227.9 L720,232.0 L740,236.1 L760,239.7 L780,242.4 L800,243.8 L820,243.8 L840,242.4 L860,239.7 L880,236.1 L900,232.0 L920,227.9 L940,224.3 L960,221.6 L980,220.2 L1000,220.2 L1020,221.6 L1040,224.3 L1060,227.9 L1080,232.0 L1100,236.1 L1120,239.7 L1140,242.4 L1160,243.8 L1180,243.8 L1200,242.4 L1200,260 Z"/>
+  <path fill="url(#waveGrad2)" d="M0,260 L0,250.8 L0,250.8 L20,249.0 L40,245.9 L60,242.0 L80,238.1 L100,234.9 L120,233.2 L140,233.2 L160,235.0 L180,238.1 L200,242.0 L220,245.9 L240,249.1 L260,250.8 L280,250.8 L300,249.0 L320,245.9 L340,242.0 L360,238.1 L380,234.9 L400,233.2 L420,233.2 L440,235.0 L460,238.1 L480,242.0 L500,245.9 L520,249.1 L540,250.8 L560,250.8 L580,249.0 L600,245.9 L620,242.0 L640,238.1 L660,234.9 L680,233.2 L700,233.2 L720,235.0 L740,238.1 L760,242.0 L780,245.9 L800,249.1 L820,250.8 L840,250.8 L860,249.0 L880,245.9 L900,242.0 L920,238.1 L940,234.9 L960,233.2 L980,233.2 L1000,235.0 L1020,238.1 L1040,242.0 L1060,245.9 L1080,249.1 L1100,250.8 L1120,250.8 L1140,249.0 L1160,245.9 L1180,242.0 L1200,238.1 L1200,260 Z"/>
 </svg>

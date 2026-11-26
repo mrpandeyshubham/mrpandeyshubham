@@ -1,9 +1,24 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="100" viewBox="0 0 1200 100">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="110" viewBox="0 0 1200 110">
   <defs>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#9C27B0"/>
-      <stop offset="100%" stop-color="#2196F3"/>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#0d1117"/>
+      <stop offset="50%" stop-color="#111827"/>
+      <stop offset="100%" stop-color="#0d1117"/>
+    </linearGradient>
+    <linearGradient id="wave" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.18"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.20"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="topLine" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0"/>
+      <stop offset="50%" stop-color="#818cf8" stop-opacity="0.75"/>
+      <stop offset="100%" stop-color="#34d399" stop-opacity="0"/>
     </linearGradient>
   </defs>
-  <path fill="url(#bg)" d="M0,0 L0,20.0 L0,20.0 L20,24.6 L40,28.2 L60,29.9 L80,29.4 L100,26.6 L120,22.4 L140,17.6 L160,13.4 L180,10.6 L200,10.1 L220,11.8 L240,15.4 L260,20.0 L280,24.6 L300,28.2 L320,29.9 L340,29.4 L360,26.6 L380,22.4 L400,17.6 L420,13.4 L440,10.6 L460,10.1 L480,11.8 L500,15.4 L520,20.0 L540,24.6 L560,28.2 L580,29.9 L600,29.4 L620,26.6 L640,22.4 L660,17.6 L680,13.4 L700,10.6 L720,10.1 L740,11.8 L760,15.4 L780,20.0 L800,24.6 L820,28.2 L840,29.9 L860,29.4 L880,26.6 L900,22.4 L920,17.6 L940,13.4 L960,10.6 L980,10.1 L1000,11.8 L1020,15.4 L1040,20.0 L1060,24.6 L1080,28.2 L1100,29.9 L1120,29.4 L1140,26.6 L1160,22.4 L1180,17.6 L1200,13.4 L1200,0 Z"/>
+  <rect x="0.5" y="0.5" width="1199" height="109" rx="12" fill="url(#bg)" stroke="#30363d"/>
+  <path fill="url(#wave)" d="M0,110 L0,26.0 L0,26.0 L20,30.5 L40,34.2 L60,36.5 L80,36.9 L100,35.5 L120,32.5 L140,28.3 L160,23.7 L180,19.5 L200,16.5 L220,15.1 L240,15.5 L260,17.8 L280,21.5 L300,26.0 L320,30.5 L340,34.2 L360,36.5 L380,36.9 L400,35.5 L420,32.5 L440,28.3 L460,23.7 L480,19.5 L500,16.5 L520,15.1 L540,15.5 L560,17.8 L580,21.5 L600,26.0 L620,30.5 L640,34.2 L660,36.5 L680,36.9 L700,35.5 L720,32.5 L740,28.3 L760,23.7 L780,19.5 L800,16.5 L820,15.1 L840,15.5 L860,17.8 L880,21.5 L900,26.0 L920,30.5 L940,34.2 L960,36.5 L980,36.9 L1000,35.5 L1020,32.5 L1040,28.3 L1060,23.7 L1080,19.5 L1100,16.5 L1120,15.1 L1140,15.5 L1160,17.8 L1180,21.5 L1200,26.0 L1200,110 Z"/>
+  <rect x="180" y="1" width="840" height="1.5" fill="url(#topLine)"/>
+  <text x="50%" y="56" text-anchor="middle" fill="#c9d1d9" font-family="'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600">Built with consistency, curiosity &amp; clean engineering  ·  Shubham Kumar Pandey</text>
+  <text x="50%" y="78" text-anchor="middle" fill="#8b949e" font-family="'JetBrains Mono', 'Fira Code', ui-monospace, monospace" font-size="11.5">github.com/mrpandeyshubham   •   let's build something impactful</text>
 </svg>

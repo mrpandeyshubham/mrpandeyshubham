@@ -1,95 +1,140 @@
 import json
+from html import escape
 
-try:
-    with open("data/stats.json") as f:
-        stats = json.load(f)
-except FileNotFoundError:
-    stats = {}
+
+def load_json(path: str) -> dict:
+    try:
+        with open(path, encoding="utf-8") as f:
+            return json.load(f)
+    except FileNotFoundError:
+        return {}
+
+
+stats = load_json("data/stats.json")
+contrib = load_json("data/contributions.json")
 
 gh = stats.get("github", {})
-repos = gh.get("public_repos", 12)
+lc = stats.get("leetcode", {})
+cc = stats.get("codechef", {})
+
+repos = gh.get("public_repos", 13)
 followers = gh.get("followers", 4)
-stars = gh.get("total_stars", 4)
+total_contribs = contrib.get("total_contributions", 280)
+lc_solved = lc.get("solved", 296)
+lc_rating = lc.get("rating", 1753)
+cc_rating = cc.get("rating", 1431)
+
 languages = gh.get("languages") or [
     {"name": "JavaScript", "pct": 38.0},
-    {"name": "HTML", "pct": 24.0},
-    {"name": "Jupyter Notebook", "pct": 18.0},
-    {"name": "CSS", "pct": 12.0},
-    {"name": "Python", "pct": 8.0},
+    {"name": "Python", "pct": 28.0},
+    {"name": "TypeScript", "pct": 14.0},
+    {"name": "HTML", "pct": 10.0},
+    {"name": "CSS", "pct": 6.0},
 ]
+languages = languages[:6]
 
 LANG_COLORS = {
-    "JavaScript": "#f1e05a", "TypeScript": "#3178c6", "HTML": "#e34c26",
-    "CSS": "#563d7c", "Python": "#3572A5", "Java": "#b07219",
-    "Jupyter Notebook": "#DA5B0B", "C": "#555555", "C++": "#f34b7d",
-    "Shell": "#89e051", "Dockerfile": "#384d54", "EJS": "#a91e50",
+    "JavaScript": "#f1e05a",
+    "TypeScript": "#3178c6",
+    "HTML": "#e34c26",
+    "CSS": "#a371f7",
+    "Python": "#3572A5",
+    "Java": "#b07219",
+    "Jupyter Notebook": "#DA5B0B",
+    "C": "#6e7681",
+    "C++": "#f34b7d",
+    "Shell": "#89e051",
+    "Dockerfile": "#384d54",
+    "EJS": "#a91e50",
+    "SCSS": "#c6538c",
 }
 
-WIDTH = 490
-PAD_X = 26
-TOP_STATS_Y = 78
-LANG_START_Y = 128
-ROW_H = 26
-HEIGHT = LANG_START_Y + len(languages) * ROW_H + 30
+WIDTH = 866
+TITLE_H = 38
+ROW_H = 27
+HEIGHT = max(246, TITLE_H + 48 + len(languages) * ROW_H + 24)
 
-BAR_MAX = WIDTH - PAD_X * 2 - 150
-
-stat_blocks = [
-    ("Public Repos", repos, "#79c0ff"),
-    ("Followers", followers, "#7ee787"),
-    ("Total Stars", stars, "#ffa657"),
+# Left column: 4 metric tiles (2x2)
+tiles = [
+    ("Public Repos", f"{repos}", f"{followers} followers", "#58a6ff"),
+    ("Contributions (1Y)", f"{total_contribs}", f"{contrib.get('active_days', 0)} active days", "#3fb950"),
+    ("LeetCode", f"{lc_solved} solved", f"{lc_rating} rating", "#ffa657"),
+    ("CodeChef", f"{cc_rating}", "competitive rating", "#a371f7"),
 ]
-block_w = (WIDTH - PAD_X * 2) / len(stat_blocks)
-stats_svg = ""
-for i, (label, value, color) in enumerate(stat_blocks):
-    cx = PAD_X + block_w * i + block_w / 2
-    stats_svg += f'''
-  <g class="stat-block" style="animation-delay:{0.1 + i*0.1:.2f}s">
-    <text x="{cx}" y="{TOP_STATS_Y}" text-anchor="middle" class="stat-value" fill="{color}">{value}</text>
-    <text x="{cx}" y="{TOP_STATS_Y + 18}" text-anchor="middle" class="stat-label">{label}</text>
+
+tiles_svg = ""
+tile_w, tile_h = 180, 78
+gap = 12
+start_x, start_y = 24, TITLE_H + 22
+for i, (lbl, val, sub, col) in enumerate(tiles):
+    col_i = i % 2
+    row_i = i // 2
+    tx = start_x + col_i * (tile_w + gap)
+    ty = start_y + row_i * (tile_h + gap)
+    delay = 0.1 + i * 0.08
+    tiles_svg += f'''
+  <g class="fade" style="animation-delay:{delay:.2f}s">
+    <rect x="{tx}" y="{ty}" width="{tile_w}" height="{tile_h}" rx="8" fill="#161b22" stroke="#21262d"/>
+    <rect x="{tx}" y="{ty + 14}" width="3" height="50" rx="1.5" fill="{col}"/>
+    <text x="{tx + 14}" y="{ty + 24}" class="tile-lbl">{escape(lbl)}</text>
+    <text x="{tx + 14}" y="{ty + 50}" class="tile-val" fill="{col}">{escape(val)}</text>
+    <text x="{tx + 14}" y="{ty + 67}" class="tile-sub">{escape(sub)}</text>
   </g>'''
 
-lang_svg = ""
+# Right column: Language distribution
+div_x = start_x + tile_w * 2 + gap + 24
+rx = div_x + 24
+bar_x = rx + 132
+bar_max = WIDTH - bar_x - 74
+
+lang_svg = f'<text x="{rx}" y="{TITLE_H + 34}" class="section-hdr">Top Languages (Repo-Balanced)</text>'
 for i, lang in enumerate(languages):
-    y = LANG_START_Y + i * ROW_H
-    color = LANG_COLORS.get(lang["name"], "#8b949e")
-    bar_w = BAR_MAX * lang["pct"] / 100
-    delay = 0.4 + i * 0.08
+    y = TITLE_H + 62 + i * ROW_H
+    name = lang["name"]
+    pct = lang["pct"]
+    color = LANG_COLORS.get(name, "#8b949e")
+    bar_w = max(4.0, bar_max * pct / 100.0)
+    delay = 0.25 + i * 0.07
     lang_svg += f'''
-  <g class="lang-row" style="animation-delay:{delay:.2f}s">
-    <circle cx="{PAD_X + 4}" cy="{y - 4}" r="5" fill="{color}"/>
-    <text x="{PAD_X + 16}" y="{y}" class="lang-name">{lang["name"]}</text>
-    <rect x="{PAD_X + 140}" y="{y - 11}" width="{BAR_MAX}" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="{PAD_X + 140}" y="{y - 11}" width="{bar_w:.1f}" height="8" rx="4" fill="{color}" style="animation-delay:{delay:.2f}s"/>
-    <text x="{WIDTH - PAD_X}" y="{y}" text-anchor="end" class="lang-pct">{lang["pct"]}%</text>
+  <g class="fade" style="animation-delay:{delay:.2f}s">
+    <circle cx="{rx + 5}" cy="{y - 4}" r="4.5" fill="{color}"/>
+    <text x="{rx + 17}" y="{y}" class="lang-name">{escape(name)}</text>
+    <rect x="{bar_x}" y="{y - 10}" width="{bar_max}" height="8" rx="4" fill="#161b22" stroke="#21262d" stroke-width="0.6"/>
+    <rect class="lang-bar" x="{bar_x}" y="{y - 10}" width="{bar_w:.1f}" height="8" rx="4" fill="{color}" style="animation-delay:{delay:.2f}s"/>
+    <text x="{WIDTH - 24}" y="{y}" text-anchor="end" class="lang-pct">{pct:.1f}%</text>
   </g>'''
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
   <style>
     .bg {{ fill: #0d1117; stroke: #30363d; stroke-width: 1; }}
     .titlebar {{ fill: #161b22; }}
-    .path {{ fill: #8b949e; font: 12px 'Fira Code', monospace; }}
-    .stat-value {{ font: 700 26px 'Fira Code', monospace; }}
-    .stat-label {{ fill: #8b949e; font: 11px 'Segoe UI', sans-serif; }}
-    .lang-name {{ fill: #c9d1d9; font: 13px 'Segoe UI', sans-serif; }}
-    .lang-pct {{ fill: #8b949e; font: 12px 'Fira Code', monospace; }}
-    .stat-block, .lang-row {{ opacity: 0; animation: fadeIn 0.5s ease-out forwards; }}
-    .lang-bar {{ transform-origin: left; transform: scaleX(0); animation: growBar 0.6s ease-out forwards; }}
+    .path {{ fill: #8b949e; font: 12px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
+    .tile-lbl {{ fill: #8b949e; font: 600 11px 'Segoe UI', Helvetica, Arial, sans-serif; }}
+    .tile-val {{ font: 700 21px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
+    .tile-sub {{ fill: #8b949e; font: 11px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
+    .section-hdr {{ fill: #f0f6fc; font: 700 13px 'Segoe UI', Helvetica, Arial, sans-serif; }}
+    .lang-name {{ fill: #c9d1d9; font: 12.5px 'Segoe UI', Helvetica, Arial, sans-serif; }}
+    .lang-pct {{ fill: #8b949e; font: 12px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
+    .fade {{ opacity: 0; animation: fadeIn 0.45s ease-out forwards; }}
+    .lang-bar {{ transform-box: view-box; transform-origin: {bar_x}px 0; transform: scaleX(0); animation: growBar 0.6s ease-out forwards; }}
     @keyframes fadeIn {{ to {{ opacity: 1; }} }}
     @keyframes growBar {{ to {{ transform: scaleX(1); }} }}
   </style>
-  <rect class="bg" x="0.5" y="0.5" width="{WIDTH-1}" height="{HEIGHT-1}" rx="8"/>
-  <rect class="titlebar" x="0" y="0" width="{WIDTH}" height="34" rx="8"/>
-  <rect x="0" y="26" width="{WIDTH}" height="8" fill="#161b22"/>
-  <circle cx="20" cy="17" r="6" fill="#ff5f56"/>
-  <circle cx="40" cy="17" r="6" fill="#ffbd2e"/>
-  <circle cx="60" cy="17" r="6" fill="#27c93f"/>
-  <text x="{WIDTH/2}" y="21" text-anchor="middle" class="path">mrpandeyshubham@github ~ $ ./analytics.sh</text>
-  {stats_svg}
-  <line x1="{PAD_X}" y1="{TOP_STATS_Y + 30}" x2="{WIDTH - PAD_X}" y2="{TOP_STATS_Y + 30}" stroke="#21262d"/>
-  {lang_svg}
-</svg>'''
+  <rect class="bg" x="0.5" y="0.5" width="{WIDTH-1}" height="{HEIGHT-1}" rx="10"/>
+  <rect class="titlebar" x="1" y="1" width="{WIDTH-2}" height="{TITLE_H}" rx="10"/>
+  <rect x="1" y="{TITLE_H - 7}" width="{WIDTH-2}" height="8" fill="#161b22"/>
+  <line x1="1" y1="{TITLE_H + 1}" x2="{WIDTH-1}" y2="{TITLE_H + 1}" stroke="#21262d"/>
+  <circle cx="20" cy="19" r="5.5" fill="#ff5f56"/>
+  <circle cx="38" cy="19" r="5.5" fill="#ffbd2e"/>
+  <circle cx="56" cy="19" r="5.5" fill="#27c93f"/>
+  <text x="{WIDTH/2}" y="23" text-anchor="middle" class="path">mrpandeyshubham@github ~ $ ./analytics.sh</text>
 
-with open("stats-card.svg", "w") as f:
+  {tiles_svg}
+  <line x1="{div_x}" y1="{TITLE_H + 18}" x2="{div_x}" y2="{HEIGHT - 20}" stroke="#21262d"/>
+  {lang_svg}
+</svg>
+'''
+
+with open("stats-card.svg", "w", encoding="utf-8") as f:
     f.write(svg)
 print("wrote stats-card.svg", WIDTH, HEIGHT)

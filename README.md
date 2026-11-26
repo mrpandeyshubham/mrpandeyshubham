@@ -1,155 +1,153 @@
 <div align="center">
-<img src="./header-banner.svg" width="100%" alt="Shubham Kumar Pandey" />
+  <img src="./header-banner.svg" width="100%" alt="Shubham Kumar Pandey — Full-Stack & Applied AI Engineer" />
 </div>
 
 <p align="center">
   <a href="https://github.com/mrpandeyshubham">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&pause=1000&color=2196F3&center=true&vCenter=true&width=600&lines=Full-Stack+Developer+(MERN);AI+%26+Cloud+Enthusiast;Building+UniBill+%2F+CuraBot+AI;Open+to+SDE+Opportunities" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=JetBrains+Mono&weight=600&size=21&pause=1100&color=58A6FF&center=true&vCenter=true&width=680&lines=Full-Stack+Engineer+(MERN+%2F+TypeScript);Computer+Vision+%26+Applied+AI+Builder;Building+TrueEyeball+%C2%B7+UniBill+%C2%B7+BachatPay+AI;Open+to+SDE+%26+AI%2FML+Opportunities" alt="Typing SVG" />
   </a>
 </p>
 
 <p align="center">
-  <a href="https://www.linkedin.com/in/shubhampandeyji/"><img src="https://img.shields.io/badge/-LinkedIn-0077B5?style=flat-square&logo=linkedin&logoColor=white" /></a>
-  <a href="https://leetcode.com/its_shubham_jee"><img src="https://img.shields.io/badge/-LeetCode-FFA116?style=flat-square&logo=leetcode&logoColor=white" /></a>
-  <a href="https://www.codechef.com/users/shubham_jee"><img src="https://img.shields.io/badge/-CodeChef-5B4638?style=flat-square&logo=codechef&logoColor=white" /></a>
-  <a href="https://codolio.com/profile/ShubhamPandey"><img src="https://img.shields.io/badge/-Codolio-6C63FF?style=flat-square&logo=codeforces&logoColor=white" /></a>
-  <a href="mailto:shubham89514@gmail.com"><img src="https://img.shields.io/badge/-Email-D14836?style=flat-square&logo=gmail&logoColor=white" /></a>
+  <a href="https://www.linkedin.com/in/shubhampandeyji/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" /></a>
+  <a href="https://leetcode.com/its_shubham_jee"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" alt="LeetCode" /></a>
+  <a href="https://www.codechef.com/users/shubham_jee"><img src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" alt="CodeChef" /></a>
+  <a href="https://codolio.com/profile/ShubhamPandey"><img src="https://img.shields.io/badge/Codolio-6C63FF?style=for-the-badge&logo=codeforces&logoColor=white" alt="Codolio" /></a>
+  <a href="mailto:shubham89514@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email" /></a>
+</p>
+
+<p align="center">
+  Final-year B.Tech CSE student at <strong>Parul University</strong> building production-grade <strong>MERN / TypeScript</strong> applications, real-time <strong>Computer Vision</strong> systems, and <strong>RAG-powered AI agents</strong>. Actively seeking <strong>SDE</strong> roles.
 </p>
 
 ---
 
-I build full-stack, production-grade apps with the **MERN stack**, and I've been getting hands-on with **AI + Cloud** (IBM Watsonx.ai, RAG pipelines) through a recent internship. Final-year CSE student, actively looking for an **SDE role**.
+<div align="center">
 
-**Currently:** building UniBill, a GST billing & inventory ERP · **Previously:** CuraBot AI, a healthcare triage chatbot
+<h3><code>mrpandeyshubham@github ~ $ whoami</code></h3>
+
+<table>
+  <tr>
+    <td valign="top"><img src="./skp-ascii.svg" width="330" alt="SKP terminal monogram" /></td>
+    <td valign="top"><img src="./info-card.svg" width="520" alt="Live neofetch developer profile card" /></td>
+  </tr>
+</table>
+
+<br />
+
+<h3><code>mrpandeyshubham@github ~ $ ./contributions.sh --live</code></h3>
+
+<img src="./contrib-heatmap.svg" width="866" alt="Real-time GitHub contribution heatmap" />
+<br />
+<img src="./stats-card.svg" width="866" alt="GitHub analytics, competitive programming stats, and language breakdown" />
+<br />
+<sub>100% self-hosted SVGs — automatically synced every 4 hours by <a href="./.github/workflows/update-profile-art.yml">GitHub Actions</a> from live GitHub, LeetCode &amp; CodeChef data.</sub>
+
+</div>
 
 ---
 
-<div align="center">
-<h3><code>mrpandeyshubham@github ~ $ whoami</code></h3>
+## 🚀 Flagship Projects
+
 <table>
   <tr>
-    <td valign="top"><img src="./skp-ascii.svg" width="330" alt="ASCII monogram" /></td>
-    <td valign="top"><img src="./info-card.svg" width="460" alt="Neofetch-style info card" /></td>
+    <td>
+      <h3>👁️ TrueEyeball — Real-Time Eyeball &amp; Gesture HCI Platform</h3>
+      <p>
+        AI-powered, touchless Human–Computer Interaction desktop platform combining <strong>OpenCV</strong> and <strong>MediaPipe</strong> facial &amp; 21-point hand landmark pipelines. Features user-adaptive EAR blink detection, a temporal gesture state machine, EMA + velocity cursor stabilization, Fernet-encrypted biometric face authentication with continuous presence monitoring, and an <strong>SQLite + CustomTkinter</strong> Smart Library &amp; Study Notes suite with RBAC and OpenPyXL Excel reporting.
+      </p>
+      <p>
+        <strong>Stack:</strong> <code>Python 3.11+</code> · <code>OpenCV</code> · <code>MediaPipe</code> · <code>CustomTkinter</code> · <code>SQLite</code> · <code>OpenPyXL</code> · <code>PyTest</code>
+      </p>
+      <p>
+        <a href="https://github.com/mrpandeyshubham/Real-Time-EyeBall-Tracking"><img src="https://img.shields.io/badge/View_Repository-161B22?style=for-the-badge&logo=github&logoColor=white" alt="TrueEyeball Repository" /></a>
+        <a href="https://github.com/mrpandeyshubham/Real-Time-EyeBall-Tracking/actions"><img src="https://img.shields.io/badge/CI-Automated_Tests-238636?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI" /></a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3>🧾 UniBill — Production-Grade GST Billing, POS &amp; Inventory ERP</h3>
+      <p>
+        Full-stack GST Billing, Point of Sale, and Inventory ERP engineered for real concurrency and transactional safety. Implements automated <strong>CGST / SGST / IGST</strong> computation, atomic financial-year invoice numbering inside <strong>MongoDB</strong> transactions, JWT refresh-token auth with RBAC, Zod request validation, GSTR-1 style tax reports with CSV export, Recharts analytics, OpenAPI/Swagger docs, Vitest + <code>mongodb-memory-server</code> tests, and Docker Compose deployment.
+      </p>
+      <p>
+        <strong>Stack:</strong> <code>React 18</code> · <code>Vite</code> · <code>Tailwind CSS</code> · <code>Node.js 20</code> · <code>Express 4</code> · <code>MongoDB 7</code> · <code>Docker</code> · <code>Vitest</code>
+      </p>
+      <p>
+        <a href="https://github.com/mrpandeyshubham/Uni-Bill"><img src="https://img.shields.io/badge/View_Repository-161B22?style=for-the-badge&logo=github&logoColor=white" alt="UniBill Repository" /></a>
+        <a href="https://github.com/mrpandeyshubham/Uni-Bill/actions"><img src="https://img.shields.io/badge/CI-Lint_%26_Vitest-238636?style=for-the-badge&logo=githubactions&logoColor=white" alt="CI" /></a>
+      </p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3>💰 BachatPay AI — Multilingual Financial Literacy RAG Agent</h3>
+      <p>
+        Cognitive AI financial assistant built during the <strong>IBM SkillsBuild for Academia Internship</strong> to simplify digital finance literacy (UPI safety, loans, savings, and budgeting) in <strong>English &amp; Hindi</strong>. Grounded in verified <strong>RBI, NPCI &amp; SEBI</strong> documentation using an <strong>IBM Watsonx.ai</strong> vector index RAG pipeline and <strong>IBM Granite LLM</strong> with context-aware filtering on <strong>IBM Cloud</strong>.
+      </p>
+      <p>
+        <strong>Stack:</strong> <code>IBM Watsonx.ai</code> · <code>IBM Granite LLM</code> · <code>RAG</code> · <code>Vector Index</code> · <code>Python</code> · <code>IBM Cloud</code>
+      </p>
+      <p>
+        <a href="https://github.com/mrpandeyshubham/Bachat-Pay_AI"><img src="https://img.shields.io/badge/View_Repository-161B22?style=for-the-badge&logo=github&logoColor=white" alt="BachatPay AI Repository" /></a>
+      </p>
+    </td>
   </tr>
 </table>
-</div>
+
+<details>
+<summary><strong>More Notable Projects</strong> — ERP-CRM (TypeScript/PostgreSQL) &amp; ₹upiya Budget (Live on Vercel)</summary>
+<br />
+<table>
+  <tr>
+    <td width="50%">
+      <strong>📦 Mini ERP + CRM Portal</strong><br />
+      Wholesale ERP/CRM with role-based auth, customer CRM, inventory, and stock-safe sales challans.<br /><br />
+      <code>TypeScript</code> · <code>React 19</code> · <code>Express 5</code> · <code>Prisma</code> · <code>PostgreSQL</code><br /><br />
+      <a href="https://github.com/mrpandeyshubham/ERP-CRM"><img src="https://img.shields.io/badge/Repository-161B22?style=flat-square&logo=github&logoColor=white" alt="ERP-CRM" /></a>
+    </td>
+    <td width="50%">
+      <strong>💸 ₹upiya Budget</strong><br />
+      Diary-style personal finance &amp; friend-udhaar tracker with smart auto-categorization.<br /><br />
+      <code>React</code> · <code>Node.js</code> · <code>Express</code> · <code>MongoDB</code> · <code>Vercel</code><br /><br />
+      <a href="https://github.com/mrpandeyshubham/RupiyaBudget"><img src="https://img.shields.io/badge/Repository-161B22?style=flat-square&logo=github&logoColor=white" alt="RupiyaBudget" /></a>
+      <a href="https://rupiyabudget.vercel.app/"><img src="https://img.shields.io/badge/Live_Demo-000000?style=flat-square&logo=vercel&logoColor=white" alt="Live Demo" /></a>
+    </td>
+  </tr>
+</table>
+</details>
+
+> Explore all repositories → [**github.com/mrpandeyshubham**](https://github.com/mrpandeyshubham?tab=repositories)
 
 ---
 
 ## 🛠️ Tech Stack
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=java,py,c,js,nodejs,express,react,mongodb,mysql,tailwind" />
+  <img src="https://skillicons.dev/icons?i=py,js,ts,java,c,react,nodejs,express,mongodb,postgres,mysql,tailwind,vite" alt="Languages & Full-Stack Frameworks" />
 </p>
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=docker,git,github,githubactions,postman,vscode,gcp" />
+  <img src="https://skillicons.dev/icons?i=opencv,prisma,sqlite,docker,git,github,githubactions,gcp,vercel,postman,vscode" alt="AI, Databases, Cloud & DevOps" />
 </p>
 
-**Cloud & DevOps:** IBM Cloud · Google Cloud · Vercel · Docker · GitHub Actions
-
----
-
-## 🚀 Featured Projects
-
-<table>
-<tr>
-<td width="50%">
-
-#### 💳 UniBill — GST Billing, POS & Inventory ERP
-Full-stack ERP with automated CGST/SGST/IGST tax computation, JWT role-based auth, Zod-validated REST APIs, PDF invoicing via Puppeteer, and a Recharts analytics dashboard. Dockerized with CI/CD via GitHub Actions.
-
-**Stack:** React · Node.js · Express · MongoDB · Docker
-<br><br>
-[![Repo](https://img.shields.io/badge/View_Repository-282a36?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mrpandeyshubham/Uni-Bill)
-
-</td>
-<td width="50%">
-
-#### 🩺 CuraBot AI — Healthcare Chatbot
-Multilingual medical triage chatbot serving verified healthcare info from trusted Indian government sources. 🏆 Recognized at Vadodara Hackathon 6.0.
-
-**Stack:** Gemini API · n8n · JavaScript
-<br><br>
-[![Repo](https://img.shields.io/badge/View_Repository-282a36?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mrpandeyshubham)
-
-</td>
-</tr>
-<tr>
-<td width="50%">
-
-#### 💰 BachatPay — AI Finance Assistant
-AI-driven multilingual finance assistant built during the IBM SkillsBuild internship. Integrated RBI/NPCI/SEBI datasets, deployed on IBM Cloud with RAG pipelines.
-
-**Stack:** IBM Watsonx.ai · Granite LLM · RAG
-<br><br>
-[![Repo](https://img.shields.io/badge/View_Repository-282a36?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mrpandeyshubham/Bachat-Pay_AI)
-
-</td>
-<td width="50%">
-
-#### 🎓 Student Management Dashboard
-Add, edit, delete & search student records with localStorage-based persistence.
-
-**Stack:** HTML · CSS · JavaScript
-<br><br>
-[![Repo](https://img.shields.io/badge/View_Repository-282a36?style=for-the-badge&logo=github&logoColor=white)](https://github.com/mrpandeyshubham/student-management-dashboard) [![Demo](https://img.shields.io/badge/Live_Demo-2196F3?style=for-the-badge&logo=vercel&logoColor=white)](https://mrpandeyshubham.github.io/student-management-dashboard/)
-
-</td>
-</tr>
-</table>
-
-> Explore more → [**All Repositories**](https://github.com/mrpandeyshubham?tab=repositories)
-
----
-
-## 📊 GitHub Analytics
-
-<div align="center">
-<img src="./stats-card.svg" width="490" alt="GitHub analytics: repos, stars, top languages" />
-<br><sub>Self-hosted card, refreshed daily by GitHub Actions — no third-party stats service (see note below)</sub>
-</div>
-
----
-
-## 📜 Licenses & Certifications
-
-- AI Fundamentals with IBM SkillsBuild — Cisco (Sep 2025)
-- Web Development using React.js — Parul University (Jul–Sep 2025)
-- Java Technology Stack — Infosys Springboard
-
----
-
-## 🏆 Achievements
-
-- **LeetCode:** 1781 rating · 24 contests — **CodeChef:** 1337 rating (peak 1345) · 9 contests
-- **292 problems solved** across LeetCode, CodeChef, GfG & HackerRank — via [Codolio](https://codolio.com/profile/ShubhamPandey)
-- 🏅 Vadodara Hackathon 6.0 (2025) — Built CuraBot AI healthcare chatbot
-- 🏅 Build With India Hackathon (2025) & Hack The Mountains 5.0 (2024) — AI-based prototypes for social impact
-
----
-
-## 🌐 Connect
-
-<p align="left">
-  <a href="https://github.com/mrpandeyshubham"><img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github&logoColor=white" /></a>
-  <a href="mailto:shubham89514@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" /></a>
-  <a href="https://www.linkedin.com/in/shubhampandeyji/"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" /></a>
-  <a href="https://leetcode.com/its_shubham_jee"><img src="https://img.shields.io/badge/LeetCode-FFA116?style=for-the-badge&logo=leetcode&logoColor=black" /></a>
-  <a href="https://www.codechef.com/users/shubham_jee"><img src="https://img.shields.io/badge/CodeChef-5B4638?style=for-the-badge&logo=codechef&logoColor=white" /></a>
+<p align="center">
+  <strong>AI &amp; Vision:</strong> OpenCV · MediaPipe · IBM Watsonx.ai · Granite LLM · RAG Pipelines<br />
+  <strong>Cloud &amp; Engineering:</strong> IBM Cloud · Google Cloud · Vercel · Docker · GitHub Actions · DSA · System Design
 </p>
 
-<div align="center">
-<img src="./footer-banner.svg" width="100%" alt="" />
-</div>
+---
 
-<!--
-This README uses only two kinds of images:
- 1. Self-hosted SVGs (header-banner, footer-banner, stats-card, info-card, skp-ascii) —
-    generated by the scripts in /scripts and committed to this repo, so they never
-    depend on someone else's server being up. stats-card.svg and info-card.svg are
-    refreshed daily by .github/workflows/update-profile-art.yml using live data
-    (GitHub API, LeetCode, CodeChef).
- 2. shields.io / skillicons.dev / readme-typing-svg badges, chosen because they're
-    widely used, well-funded services (unlike the shared free github-readme-stats.vercel.app
-    instance, which is currently unreliable/rate-limited for everyone using it).
--->
+## 🏆 Achievements & Certifications
+
+| Category | Highlights |
+| --- | --- |
+| **Competitive Programming** | **LeetCode:** 1753 rating · 296+ solved · 25 contests &nbsp;|&nbsp; **CodeChef:** 1431 rating · 9+ contests &nbsp;|&nbsp; Tracked on [Codolio](https://codolio.com/profile/ShubhamPandey) |
+| **Hackathons** | 🏅 **Vadodara Hackathon 6.0 (2025)** — CuraBot AI &nbsp;·&nbsp; 🏅 **Build With India (2025)** &amp; **Hack The Mountains 5.0 (2024)** |
+| **Certifications** | AI Fundamentals with IBM SkillsBuild (Cisco) &nbsp;·&nbsp; React.js Web Development (Parul University) &nbsp;·&nbsp; Java Technology Stack (Infosys Springboard) |
+
+---
+
+<div align="center">
+  <img src="./footer-banner.svg" width="100%" alt="Shubham Kumar Pandey" />
+</div>

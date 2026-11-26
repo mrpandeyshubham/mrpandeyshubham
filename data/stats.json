@@ -14,28 +14,29 @@
     "languages": [
       {
         "name": "Python",
-        "pct": 96.4
+        "pct": 46.9
       },
       {
         "name": "JavaScript",
-        "pct": 1.1
-      },
-      {
-        "name": "C",
-        "pct": 1.1
-      },
-      {
-        "name": "Cython",
-        "pct": 0.3
+        "pct": 32.6
       },
       {
         "name": "TypeScript",
-        "pct": 0.3
+        "pct": 9.2
       },
       {
-        "name": "C++",
-        "pct": 0.2
+        "name": "HTML",
+        "pct": 4.9
+      },
+      {
+        "name": "CSS",
+        "pct": 3.8
+      },
+      {
+        "name": "Jupyter Notebook",
+        "pct": 1.1
       }
     ]
-  }
+  },
+  "updated_at": "2026-11-26T17:07:28Z"
 }

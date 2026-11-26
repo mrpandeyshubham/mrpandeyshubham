@@ -1,79 +1,99 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="490" height="314" viewBox="0 0 490 314">
+<svg xmlns="http://www.w3.org/2000/svg" width="866" height="272" viewBox="0 0 866 272">
   <style>
     .bg { fill: #0d1117; stroke: #30363d; stroke-width: 1; }
     .titlebar { fill: #161b22; }
-    .path { fill: #8b949e; font: 12px 'Fira Code', monospace; }
-    .stat-value { font: 700 26px 'Fira Code', monospace; }
-    .stat-label { fill: #8b949e; font: 11px 'Segoe UI', sans-serif; }
-    .lang-name { fill: #c9d1d9; font: 13px 'Segoe UI', sans-serif; }
-    .lang-pct { fill: #8b949e; font: 12px 'Fira Code', monospace; }
-    .stat-block, .lang-row { opacity: 0; animation: fadeIn 0.5s ease-out forwards; }
-    .lang-bar { transform-origin: left; transform: scaleX(0); animation: growBar 0.6s ease-out forwards; }
+    .path { fill: #8b949e; font: 12px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }
+    .tile-lbl { fill: #8b949e; font: 600 11px 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .tile-val { font: 700 21px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }
+    .tile-sub { fill: #8b949e; font: 11px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }
+    .section-hdr { fill: #f0f6fc; font: 700 13px 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .lang-name { fill: #c9d1d9; font: 12.5px 'Segoe UI', Helvetica, Arial, sans-serif; }
+    .lang-pct { fill: #8b949e; font: 12px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }
+    .fade { opacity: 0; animation: fadeIn 0.45s ease-out forwards; }
+    .lang-bar { transform-box: view-box; transform-origin: 576px 0; transform: scaleX(0); animation: growBar 0.6s ease-out forwards; }
     @keyframes fadeIn { to { opacity: 1; } }
     @keyframes growBar { to { transform: scaleX(1); } }
   </style>
-  <rect class="bg" x="0.5" y="0.5" width="489" height="313" rx="8"/>
-  <rect class="titlebar" x="0" y="0" width="490" height="34" rx="8"/>
-  <rect x="0" y="26" width="490" height="8" fill="#161b22"/>
-  <circle cx="20" cy="17" r="6" fill="#ff5f56"/>
-  <circle cx="40" cy="17" r="6" fill="#ffbd2e"/>
-  <circle cx="60" cy="17" r="6" fill="#27c93f"/>
-  <text x="245.0" y="21" text-anchor="middle" class="path">mrpandeyshubham@github ~ $ ./analytics.sh</text>
+  <rect class="bg" x="0.5" y="0.5" width="865" height="271" rx="10"/>
+  <rect class="titlebar" x="1" y="1" width="864" height="38" rx="10"/>
+  <rect x="1" y="31" width="864" height="8" fill="#161b22"/>
+  <line x1="1" y1="39" x2="865" y2="39" stroke="#21262d"/>
+  <circle cx="20" cy="19" r="5.5" fill="#ff5f56"/>
+  <circle cx="38" cy="19" r="5.5" fill="#ffbd2e"/>
+  <circle cx="56" cy="19" r="5.5" fill="#27c93f"/>
+  <text x="433.0" y="23" text-anchor="middle" class="path">mrpandeyshubham@github ~ $ ./analytics.sh</text>
+
   
-  <g class="stat-block" style="animation-delay:0.10s">
-    <text x="99.0" y="78" text-anchor="middle" class="stat-value" fill="#79c0ff">13</text>
-    <text x="99.0" y="96" text-anchor="middle" class="stat-label">Public Repos</text>
+  <g class="fade" style="animation-delay:0.10s">
+    <rect x="24" y="60" width="180" height="78" rx="8" fill="#161b22" stroke="#21262d"/>
+    <rect x="24" y="74" width="3" height="50" rx="1.5" fill="#58a6ff"/>
+    <text x="38" y="84" class="tile-lbl">Public Repos</text>
+    <text x="38" y="110" class="tile-val" fill="#58a6ff">13</text>
+    <text x="38" y="127" class="tile-sub">4 followers</text>
   </g>
-  <g class="stat-block" style="animation-delay:0.20s">
-    <text x="245.0" y="78" text-anchor="middle" class="stat-value" fill="#7ee787">4</text>
-    <text x="245.0" y="96" text-anchor="middle" class="stat-label">Followers</text>
+  <g class="fade" style="animation-delay:0.18s">
+    <rect x="216" y="60" width="180" height="78" rx="8" fill="#161b22" stroke="#21262d"/>
+    <rect x="216" y="74" width="3" height="50" rx="1.5" fill="#3fb950"/>
+    <text x="230" y="84" class="tile-lbl">Contributions (1Y)</text>
+    <text x="230" y="110" class="tile-val" fill="#3fb950">280</text>
+    <text x="230" y="127" class="tile-sub">121 active days</text>
   </g>
-  <g class="stat-block" style="animation-delay:0.30s">
-    <text x="391.0" y="78" text-anchor="middle" class="stat-value" fill="#ffa657">0</text>
-    <text x="391.0" y="96" text-anchor="middle" class="stat-label">Total Stars</text>
+  <g class="fade" style="animation-delay:0.26s">
+    <rect x="24" y="150" width="180" height="78" rx="8" fill="#161b22" stroke="#21262d"/>
+    <rect x="24" y="164" width="3" height="50" rx="1.5" fill="#ffa657"/>
+    <text x="38" y="174" class="tile-lbl">LeetCode</text>
+    <text x="38" y="200" class="tile-val" fill="#ffa657">296 solved</text>
+    <text x="38" y="217" class="tile-sub">1753 rating</text>
   </g>
-  <line x1="26" y1="108" x2="464" y2="108" stroke="#21262d"/>
-  
-  <g class="lang-row" style="animation-delay:0.40s">
-    <circle cx="30" cy="124" r="5" fill="#3572A5"/>
-    <text x="42" y="128" class="lang-name">Python</text>
-    <rect x="166" y="117" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="117" width="277.6" height="8" rx="4" fill="#3572A5" style="animation-delay:0.40s"/>
-    <text x="464" y="128" text-anchor="end" class="lang-pct">96.4%</text>
+  <g class="fade" style="animation-delay:0.34s">
+    <rect x="216" y="150" width="180" height="78" rx="8" fill="#161b22" stroke="#21262d"/>
+    <rect x="216" y="164" width="3" height="50" rx="1.5" fill="#a371f7"/>
+    <text x="230" y="174" class="tile-lbl">CodeChef</text>
+    <text x="230" y="200" class="tile-val" fill="#a371f7">1431</text>
+    <text x="230" y="217" class="tile-sub">competitive rating</text>
   </g>
-  <g class="lang-row" style="animation-delay:0.48s">
-    <circle cx="30" cy="150" r="5" fill="#f1e05a"/>
-    <text x="42" y="154" class="lang-name">JavaScript</text>
-    <rect x="166" y="143" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="143" width="3.2" height="8" rx="4" fill="#f1e05a" style="animation-delay:0.48s"/>
-    <text x="464" y="154" text-anchor="end" class="lang-pct">1.1%</text>
+  <line x1="420" y1="56" x2="420" y2="252" stroke="#21262d"/>
+  <text x="444" y="72" class="section-hdr">Top Languages (Repo-Balanced)</text>
+  <g class="fade" style="animation-delay:0.25s">
+    <circle cx="449" cy="96" r="4.5" fill="#3572A5"/>
+    <text x="461" y="100" class="lang-name">Python</text>
+    <rect x="576" y="90" width="216" height="8" rx="4" fill="#161b22" stroke="#21262d" stroke-width="0.6"/>
+    <rect class="lang-bar" x="576" y="90" width="101.3" height="8" rx="4" fill="#3572A5" style="animation-delay:0.25s"/>
+    <text x="842" y="100" text-anchor="end" class="lang-pct">46.9%</text>
   </g>
-  <g class="lang-row" style="animation-delay:0.56s">
-    <circle cx="30" cy="176" r="5" fill="#555555"/>
-    <text x="42" y="180" class="lang-name">C</text>
-    <rect x="166" y="169" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="169" width="3.2" height="8" rx="4" fill="#555555" style="animation-delay:0.56s"/>
-    <text x="464" y="180" text-anchor="end" class="lang-pct">1.1%</text>
+  <g class="fade" style="animation-delay:0.32s">
+    <circle cx="449" cy="123" r="4.5" fill="#f1e05a"/>
+    <text x="461" y="127" class="lang-name">JavaScript</text>
+    <rect x="576" y="117" width="216" height="8" rx="4" fill="#161b22" stroke="#21262d" stroke-width="0.6"/>
+    <rect class="lang-bar" x="576" y="117" width="70.4" height="8" rx="4" fill="#f1e05a" style="animation-delay:0.32s"/>
+    <text x="842" y="127" text-anchor="end" class="lang-pct">32.6%</text>
   </g>
-  <g class="lang-row" style="animation-delay:0.64s">
-    <circle cx="30" cy="202" r="5" fill="#8b949e"/>
-    <text x="42" y="206" class="lang-name">Cython</text>
-    <rect x="166" y="195" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="195" width="0.9" height="8" rx="4" fill="#8b949e" style="animation-delay:0.64s"/>
-    <text x="464" y="206" text-anchor="end" class="lang-pct">0.3%</text>
+  <g class="fade" style="animation-delay:0.39s">
+    <circle cx="449" cy="150" r="4.5" fill="#3178c6"/>
+    <text x="461" y="154" class="lang-name">TypeScript</text>
+    <rect x="576" y="144" width="216" height="8" rx="4" fill="#161b22" stroke="#21262d" stroke-width="0.6"/>
+    <rect class="lang-bar" x="576" y="144" width="19.9" height="8" rx="4" fill="#3178c6" style="animation-delay:0.39s"/>
+    <text x="842" y="154" text-anchor="end" class="lang-pct">9.2%</text>
   </g>
-  <g class="lang-row" style="animation-delay:0.72s">
-    <circle cx="30" cy="228" r="5" fill="#3178c6"/>
-    <text x="42" y="232" class="lang-name">TypeScript</text>
-    <rect x="166" y="221" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="221" width="0.9" height="8" rx="4" fill="#3178c6" style="animation-delay:0.72s"/>
-    <text x="464" y="232" text-anchor="end" class="lang-pct">0.3%</text>
+  <g class="fade" style="animation-delay:0.46s">
+    <circle cx="449" cy="177" r="4.5" fill="#e34c26"/>
+    <text x="461" y="181" class="lang-name">HTML</text>
+    <rect x="576" y="171" width="216" height="8" rx="4" fill="#161b22" stroke="#21262d" stroke-width="0.6"/>
+    <rect class="lang-bar" x="576" y="171" width="10.6" height="8" rx="4" fill="#e34c26" style="animation-delay:0.46s"/>
+    <text x="842" y="181" text-anchor="end" class="lang-pct">4.9%</text>
   </g>
-  <g class="lang-row" style="animation-delay:0.80s">
-    <circle cx="30" cy="254" r="5" fill="#f34b7d"/>
-    <text x="42" y="258" class="lang-name">C++</text>
-    <rect x="166" y="247" width="288" height="8" rx="4" fill="#21262d"/>
-    <rect class="lang-bar" x="166" y="247" width="0.6" height="8" rx="4" fill="#f34b7d" style="animation-delay:0.80s"/>
-    <text x="464" y="258" text-anchor="end" class="lang-pct">0.2%</text>
+  <g class="fade" style="animation-delay:0.53s">
+    <circle cx="449" cy="204" r="4.5" fill="#a371f7"/>
+    <text x="461" y="208" class="lang-name">CSS</text>
+    <rect x="576" y="198" width="216" height="8" rx="4" fill="#161b22" stroke="#21262d" stroke-width="0.6"/>
+    <rect class="lang-bar" x="576" y="198" width="8.2" height="8" rx="4" fill="#a371f7" style="animation-delay:0.53s"/>
+    <text x="842" y="208" text-anchor="end" class="lang-pct">3.8%</text>
+  </g>
+  <g class="fade" style="animation-delay:0.60s">
+    <circle cx="449" cy="231" r="4.5" fill="#DA5B0B"/>
+    <text x="461" y="235" class="lang-name">Jupyter Notebook</text>
+    <rect x="576" y="225" width="216" height="8" rx="4" fill="#161b22" stroke="#21262d" stroke-width="0.6"/>
+    <rect class="lang-bar" x="576" y="225" width="4.0" height="8" rx="4" fill="#DA5B0B" style="animation-delay:0.60s"/>
+    <text x="842" y="235" text-anchor="end" class="lang-pct">1.1%</text>
   </g>
 </svg>

@@ -1,14 +1,13 @@
 """
 Pulls live data for the info card and stats card:
-  - LeetCode: rating + contests via the public (unauthenticated) GraphQL endpoint
-  - CodeChef: rating via the public profile page
-  - GitHub: repo count, followers, total stars, and language breakdown via the
-    public REST API (uses GITHUB_TOKEN if present, to avoid the low anonymous
-    rate limit -- Actions provides this automatically via secrets.GITHUB_TOKEN)
-No tokens are *required*, but GITHUB_TOKEN makes the GitHub calls reliable.
-If a source fails or changes its markup, we keep the last known-good value
-from data/stats.json instead of writing a zero.
+  - LeetCode: rating + solved + contests via GraphQL
+  - CodeChef: rating via public profile page
+  - GitHub: repo count, followers, total stars, and balanced language breakdown
+    via the REST API (caps per-repo bytes so vendored/env commits in any single
+    repo don't distort the portfolio language distribution).
+If a source fails or is blocked, keeps the last known-good value in data/stats.json.
 """
+import datetime
 import json
 import os
 import re
@@ -18,6 +17,11 @@ LEETCODE_USER = "its_shubham_jee"
 CODECHEF_USER = "shubham_jee"
 GITHUB_USER = "mrpandeyshubham"
 STATS_PATH = "data/stats.json"
+
+# Cap each repository's total byte weight so committed dependencies/venvs
+# in a single repo cannot overwhelm the rest of the codebase.
+MAX_REPO_LANG_BYTES = 350_000
+IGNORED_LANGS = {"Batchfile", "Roff", "Meson", "Fortran", "Go Template", "Lua", "Cython"}
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (profile-readme-bot)"}
 
@@ -29,7 +33,7 @@ if GH_TOKEN:
 
 def load_previous():
     try:
-        with open(STATS_PATH) as f:
+        with open(STATS_PATH, encoding="utf-8") as f:
             return json.load(f)
     except FileNotFoundError:
         return {}
@@ -46,8 +50,11 @@ def fetch_leetcode():
     resp = requests.post(
         "https://leetcode.com/graphql",
         json={"query": query, "variables": {"username": LEETCODE_USER}},
-        headers={**HEADERS, "Referer": f"https://leetcode.com/{LEETCODE_USER}/",
-                 "Content-Type": "application/json"},
+        headers={
+            **HEADERS,
+            "Referer": f"https://leetcode.com/{LEETCODE_USER}/",
+            "Content-Type": "application/json",
+        },
         timeout=15,
     )
     resp.raise_for_status()
@@ -62,33 +69,38 @@ def fetch_leetcode():
 
 
 def fetch_codechef():
-    resp = requests.get(f"https://www.codechef.com/users/{CODECHEF_USER}",
-                         headers=HEADERS, timeout=15)
+    resp = requests.get(
+        f"https://www.codechef.com/users/{CODECHEF_USER}",
+        headers=HEADERS,
+        timeout=15,
+    )
     resp.raise_for_status()
-    html = resp.text
-    m = re.search(r'rating-number">\s*([\d]+)', html)
+    m = re.search(r'rating-number">\s*([\d]+)', resp.text)
     rating = int(m.group(1)) if m else None
     return {"rating": rating}
 
 
 def fetch_github():
-    """Profile basics + total stars + aggregated language bytes across
-    non-fork public repos."""
-    resp = requests.get(f"https://api.github.com/users/{GITHUB_USER}",
-                         headers=GH_HEADERS, timeout=15)
+    resp = requests.get(
+        f"https://api.github.com/users/{GITHUB_USER}",
+        headers=GH_HEADERS,
+        timeout=15,
+    )
     resp.raise_for_status()
     profile = resp.json()
 
     repos_resp = requests.get(
         f"https://api.github.com/users/{GITHUB_USER}/repos",
         params={"per_page": 100, "type": "owner"},
-        headers=GH_HEADERS, timeout=15,
+        headers=GH_HEADERS,
+        timeout=15,
     )
     repos_resp.raise_for_status()
     repos = repos_resp.json()
 
     total_stars = 0
     lang_bytes = {}
+    lang_complete = True
     for repo in repos:
         if repo.get("fork"):
             continue
@@ -98,16 +110,25 @@ def fetch_github():
             continue
         lr = requests.get(lang_url, headers=GH_HEADERS, timeout=15)
         if lr.status_code != 200:
+            lang_complete = False
             continue
-        for lang, count in lr.json().items():
-            lang_bytes[lang] = lang_bytes.get(lang, 0) + count
+        repo_langs = {k: v for k, v in lr.json().items() if k not in IGNORED_LANGS and v > 0}
+        repo_total = sum(repo_langs.values())
+        if repo_total <= 0:
+            continue
+        scale = min(1.0, MAX_REPO_LANG_BYTES / repo_total)
+        for lang, count in repo_langs.items():
+            lang_bytes[lang] = lang_bytes.get(lang, 0.0) + count * scale
 
-    total_bytes = sum(lang_bytes.values()) or 1
-    top_langs = sorted(lang_bytes.items(), key=lambda kv: kv[1], reverse=True)[:6]
-    languages = [
-        {"name": name, "pct": round(count / total_bytes * 100, 1)}
-        for name, count in top_langs
-    ]
+    languages = []
+    if lang_complete and lang_bytes:
+        total_bytes = sum(lang_bytes.values()) or 1.0
+        top_langs = sorted(lang_bytes.items(), key=lambda kv: kv[1], reverse=True)[:6]
+        languages = [
+            {"name": name, "pct": round(count / total_bytes * 100, 1)}
+            for name, count in top_langs
+            if (count / total_bytes * 100) >= 0.5
+        ]
 
     return {
         "public_repos": profile.get("public_repos"),
@@ -118,17 +139,19 @@ def fetch_github():
 
 
 def main():
-    stats = load_previous()
+    prev = load_previous()
+    stats = json.loads(json.dumps(prev)) if prev else {}
     stats.setdefault("leetcode", {})
     stats.setdefault("codechef", {})
     stats.setdefault("github", {})
 
-    for name, fn in (("leetcode", fetch_leetcode),
-                      ("codechef", fetch_codechef),
-                      ("github", fetch_github)):
+    for name, fn in (
+        ("leetcode", fetch_leetcode),
+        ("codechef", fetch_codechef),
+        ("github", fetch_github),
+    ):
         try:
             fresh = fn()
-            # only overwrite fields that came back non-null / non-empty
             for k, v in fresh.items():
                 if v is not None and v != []:
                     stats[name][k] = v
@@ -136,7 +159,16 @@ def main():
         except Exception as e:
             print(f"[warn] {name} fetch failed ({e}); keeping previous value {stats[name]}")
 
-    with open(STATS_PATH, "w") as f:
+    today_utc = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%d")
+    prev_core = {k: v for k, v in prev.items() if k != "updated_at"}
+    new_core = {k: v for k, v in stats.items() if k != "updated_at"}
+    if new_core != prev_core or (prev.get("updated_at") or "")[:10] != today_utc:
+        stats["updated_at"] = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    elif "updated_at" in prev:
+        stats["updated_at"] = prev["updated_at"]
+
+    os.makedirs(os.path.dirname(STATS_PATH), exist_ok=True)
+    with open(STATS_PATH, "w", encoding="utf-8") as f:
         json.dump(stats, f, indent=2)
 
 
