@@ -31,9 +31,9 @@ cur_streak = contrib.get("current_streak", 0)
 best_streak = contrib.get("longest_streak", 0)
 updated_at = (contrib.get("updated_at") or stats.get("updated_at") or "")[:10] or "live"
 
-WIDTH, HEIGHT = 520, 350
+WIDTH, HEIGHT = 506, 360
 PAD_X = 24
-TITLE_H = 36
+TITLE_H = 38
 ROW_H = 24
 START_Y = TITLE_H + 34
 
@@ -46,7 +46,7 @@ ROWS = [
     ("Cloud",      "IBM Cloud, GCP, Docker, GH Actions", "#a5d6ff"),
     ("LeetCode",   f"{lc_rating} rating · {lc_solved} solved ({lc_contests}c)", "#ffa657"),
     ("CodeChef",   f"{cc_rating} rating · 9+ contests", "#ffa657"),
-    ("GitHub",     f"{repos} public repos · {total_contribs} contribs (1y)", "#3fb950"),
+    ("GitHub",     f"{repos} repos · {total_contribs} contribs (1y)", "#3fb950"),
     ("Streak",     f"{cur_streak}d current · {best_streak}d longest", "#ff7b72"),
     ("Synced",     f"{updated_at} (automated daily)", "#8b949e"),
 ]
@@ -60,8 +60,8 @@ for i, (label, value, color) in enumerate(ROWS):
     rows_svg.append(
         f'<g class="{row_class}"{cls}>'
         f'<text x="{PAD_X}" y="{y}" class="label" fill="{color}">{escape(label)}</text>'
-        f'<text x="{PAD_X + 94}" y="{y}" class="sep">:</text>'
-        f'<text x="{PAD_X + 108}" y="{y}" class="value">{escape(value)}</text>'
+        f'<text x="{PAD_X + 88}" y="{y}" class="sep">:</text>'
+        f'<text x="{PAD_X + 102}" y="{y}" class="value">{escape(value)}</text>'
         f'</g>'
     )
 
@@ -77,9 +77,9 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGH
     .bg {{ fill: #0d1117; stroke: #30363d; stroke-width: 1; }}
     .titlebar {{ fill: #161b22; }}
     .path {{ fill: #8b949e; font: 12px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
-    .label {{ font: 700 12.5px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
-    .sep {{ fill: #484f58; font: 12.5px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
-    .value {{ fill: #c9d1d9; font: 12.5px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
+    .label {{ font: 700 13px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
+    .sep {{ fill: #484f58; font: 13px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
+    .value {{ fill: #e6edf3; font: 13px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
     .row {{ opacity: 0; animation: fadeSlide 0.45s ease-out forwards; }}
     .row.static {{ opacity: 1; }}
     @keyframes fadeSlide {{

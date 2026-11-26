@@ -1,66 +1,103 @@
-FALLBACK_ASCII = [
-    "  _|_|_|  _|    _|  _|_|_|    ",
-    "_|        _|  _|    _|    _|  ",
-    "  _|_|    _|_|      _|_|_|    ",
-    "      _|  _|  _|    _|        ",
-    "_|_|_|    _|    _|  _|        ",
-]
+WIDTH = 360
+HEIGHT = 360
+TITLE_H = 38
 
-try:
-    import pyfiglet
-    raw = pyfiglet.Figlet(font="block", width=200).renderText("SKP")
-    lines = [l for l in raw.split("\n") if l.strip()]
-    if not lines:
-        lines = FALLBACK_ASCII
-except Exception:
-    lines = FALLBACK_ASCII
+LETTERS = {
+    "S": [
+        "01111",
+        "10000",
+        "10000",
+        "01110",
+        "00001",
+        "00001",
+        "11110",
+    ],
+    "K": [
+        "10001",
+        "10010",
+        "10100",
+        "11000",
+        "10100",
+        "10010",
+        "10001",
+    ],
+    "P": [
+        "11110",
+        "10001",
+        "10001",
+        "11110",
+        "10000",
+        "10000",
+        "10000",
+    ],
+}
 
-WIDTH = 330
-HEIGHT = 350
-PAD_X = 24
-TITLE_H = 36
-LINE_H = 22
-ASCII_TOP = TITLE_H + 46
+LETTER_COLORS = {
+    "S": "#38bdf8",  # cyan
+    "K": "#a371f7",  # violet
+    "P": "#3fb950",  # emerald
+}
 
-rows = []
-for i, line in enumerate(lines):
-    y = ASCII_TOP + i * LINE_H
-    text = line.replace(" ", "&#160;")
-    width_px = max(260, len(line) * 9.4 + 8)
-    delay = i * 0.12
-    rows.append(f'''
-  <clipPath id="clip{i}">
-    <rect x="0" y="{y - LINE_H + 4}" width="0" height="{LINE_H}">
-      <animate attributeName="width" from="0" to="{width_px}" begin="{delay:.2f}s" dur="0.35s" fill="freeze" calcMode="linear"/>
-    </rect>
-  </clipPath>
-  <g clip-path="url(#clip{i})">
-    <text x="{PAD_X}" y="{y}" class="ascii">{text}</text>
-    <rect class="cursor" x="{PAD_X}" y="{y - LINE_H + 6}" width="7" height="{LINE_H - 6}">
-      <animate attributeName="x" from="{PAD_X}" to="{PAD_X + width_px}" begin="{delay:.2f}s" dur="0.35s" fill="freeze" calcMode="linear"/>
-      <animate attributeName="opacity" from="1" to="0" begin="{delay + 0.35:.2f}s" dur="0.01s" fill="freeze"/>
-    </rect>
-  </g>''')
+CELL = 13
+GAP = 3
+STEP = CELL + GAP
+LETTER_GAP_COLS = 2
+TOTAL_COLS = 5 * 3 + LETTER_GAP_COLS * 2  # 19 cols
+GRID_W = TOTAL_COLS * CELL + (TOTAL_COLS - 1) * GAP  # 301px
+START_X = (WIDTH - GRID_W) / 2
+START_Y = TITLE_H + 26
+
+blocks = []
+col_offset = 0
+for idx, ch in enumerate(("S", "K", "P")):
+    bitmap = LETTERS[ch]
+    color = LETTER_COLORS[ch]
+    for r, row in enumerate(bitmap):
+        for c, bit in enumerate(row):
+            x = START_X + (col_offset + c) * STEP
+            y = START_Y + r * STEP
+            if bit == "1":
+                delay = (col_offset + c) * 0.035 + r * 0.02
+                blocks.append(
+                    f'<rect class="blk" x="{x:.1f}" y="{y:.1f}" width="{CELL}" height="{CELL}" '
+                    f'rx="3" fill="{color}" style="animation-delay:{delay:.2f}s"/>'
+                )
+            else:
+                blocks.append(
+                    f'<rect x="{x:.1f}" y="{y:.1f}" width="{CELL}" height="{CELL}" '
+                    f'rx="3" fill="#161b22" opacity="0.55"/>'
+                )
+    col_offset += 5 + LETTER_GAP_COLS
+
+NAME_Y = START_Y + 7 * STEP + 32
 
 svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGHT}" viewBox="0 0 {WIDTH} {HEIGHT}">
-  <defs>
-    <linearGradient id="asciiGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#58a6ff"/>
-      <stop offset="55%" stop-color="#a371f7"/>
-      <stop offset="100%" stop-color="#3fb950"/>
-    </linearGradient>
-  </defs>
   <style>
     .bg {{ fill: #0d1117; stroke: #30363d; stroke-width: 1; }}
     .titlebar {{ fill: #161b22; }}
     .path {{ fill: #8b949e; font: 12px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
-    .ascii {{ fill: url(#asciiGrad); font: 700 15px 'JetBrains Mono', 'Fira Code', 'Courier New', monospace; white-space: pre; }}
-    .cursor {{ fill: #58a6ff; }}
-    .term-k {{ fill: #7ee787; font: 600 12px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
-    .term-v {{ fill: #c9d1d9; font: 12px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
-    .term-m {{ fill: #8b949e; font: 11.5px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace; }}
-    .fade {{ opacity: 0; animation: fadeIn 0.5s ease-out 0.8s forwards; }}
-    @keyframes fadeIn {{ to {{ opacity: 1; }} }}
+    .blk {{ opacity: 0; transform-box: fill-box; transform-origin: center; animation: popIn 0.35s ease-out forwards; }}
+    @keyframes popIn {{
+      0% {{ opacity: 0; transform: scale(0.75); }}
+      100% {{ opacity: 1; transform: scale(1); }}
+    }}
+    .name {{
+      fill: #f0f6fc;
+      font: 700 19px 'Segoe UI', -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
+      letter-spacing: -0.2px;
+    }}
+    .handle {{
+      fill: #58a6ff;
+      font: 600 13px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    }}
+    .cmd {{
+      fill: #3fb950;
+      font: 700 13px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    }}
+    .out {{
+      fill: #e6edf3;
+      font: 500 13px 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+    }}
   </style>
   <rect class="bg" x="0.5" y="0.5" width="{WIDTH-1}" height="{HEIGHT-1}" rx="10"/>
   <rect class="titlebar" x="1" y="1" width="{WIDTH-2}" height="{TITLE_H}" rx="10"/>
@@ -69,18 +106,19 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGH
   <circle cx="20" cy="19" r="5.5" fill="#ff5f56"/>
   <circle cx="38" cy="19" r="5.5" fill="#ffbd2e"/>
   <circle cx="56" cy="19" r="5.5" fill="#27c93f"/>
-  <text x="{WIDTH/2 + 16}" y="23" text-anchor="middle" class="path">skp@github ~ % banner</text>
+  <text x="{WIDTH/2 + 16}" y="23" text-anchor="middle" class="path">skp@github ~ % id</text>
 
-  {''.join(rows)}
+  {''.join(blocks)}
 
-  <line x1="{PAD_X}" y1="212" x2="{WIDTH - PAD_X}" y2="212" stroke="#21262d"/>
-  <g class="fade">
-    <text x="{PAD_X}" y="240" class="term-k">$ whoami</text>
-    <text x="{PAD_X}" y="260" class="term-v">Shubham Kumar Pandey (SKP)</text>
-    <text x="{PAD_X}" y="286" class="term-k">$ focus --current</text>
-    <text x="{PAD_X}" y="306" class="term-v">MERN · Computer Vision · RAG AI</text>
-    <text x="{PAD_X}" y="330" class="term-m">India  ·  Open to SDE Opportunities</text>
-  </g>
+  <text x="{WIDTH/2}" y="{NAME_Y}" text-anchor="middle" class="name">Shubham Kumar Pandey</text>
+  <text x="{WIDTH/2}" y="{NAME_Y + 22}" text-anchor="middle" class="handle">@mrpandeyshubham</text>
+
+  <line x1="26" y1="{NAME_Y + 38}" x2="{WIDTH - 26}" y2="{NAME_Y + 38}" stroke="#21262d"/>
+
+  <text x="28" y="{NAME_Y + 62}" class="cmd">$ focus</text>
+  <text x="98" y="{NAME_Y + 62}" class="out">MERN · CV · RAG AI</text>
+  <text x="28" y="{NAME_Y + 86}" class="cmd">$ status</text>
+  <text x="98" y="{NAME_Y + 86}" class="out">Open to SDE Roles</text>
 </svg>
 '''
 
