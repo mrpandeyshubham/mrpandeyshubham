@@ -122,6 +122,6 @@ svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="{WIDTH}" height="{HEIGH
 </svg>
 '''
 
-with open("skp-ascii.svg", "w", encoding="utf-8") as f:
+with open("skp-monogram.svg", "w", encoding="utf-8") as f:
     f.write(svg)
-print("wrote skp-ascii.svg", WIDTH, HEIGHT)
+print("wrote skp-monogram.svg", WIDTH, HEIGHT)

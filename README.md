@@ -28,7 +28,7 @@
 
 <table>
   <tr>
-    <td valign="top"><img src="./skp-ascii.svg" width="360" alt="SKP terminal monogram" /></td>
+    <td valign="top"><img src="./skp-monogram.svg" width="360" alt="SKP terminal monogram" /></td>
     <td valign="top"><img src="./info-card.svg" width="506" alt="Live neofetch developer profile card" /></td>
   </tr>
 </table>
