@@ -32,13 +32,13 @@
     <rect x="24.0" y="48" width="194.5" height="34" rx="7" fill="#161b22" stroke="#21262d"/>
     <circle cx="38.0" cy="65" r="3.5" fill="#3fb950"/>
     <text x="48.0" y="69" class="kpi-lbl">Total (1Y):</text>
-    <text x="206.5" y="69" text-anchor="end" class="kpi-val" fill="#3fb950">292</text>
+    <text x="206.5" y="69" text-anchor="end" class="kpi-val" fill="#3fb950">293</text>
   </g>
   <g>
     <rect x="228.5" y="48" width="194.5" height="34" rx="7" fill="#161b22" stroke="#21262d"/>
     <circle cx="242.5" cy="65" r="3.5" fill="#58a6ff"/>
     <text x="252.5" y="69" class="kpi-lbl">Current Streak:</text>
-    <text x="411.0" y="69" text-anchor="end" class="kpi-val" fill="#58a6ff">6 days</text>
+    <text x="411.0" y="69" text-anchor="end" class="kpi-val" fill="#58a6ff">7 days</text>
   </g>
   <g>
     <rect x="433.0" y="48" width="194.5" height="34" rx="7" fill="#161b22" stroke="#21262d"/>
@@ -50,7 +50,7 @@
     <rect x="637.5" y="48" width="194.5" height="34" rx="7" fill="#161b22" stroke="#21262d"/>
     <circle cx="651.5" cy="65" r="3.5" fill="#ffa657"/>
     <text x="661.5" y="69" class="kpi-lbl">Active Days:</text>
-    <text x="820.0" y="69" text-anchor="end" class="kpi-val" fill="#ffa657">121</text>
+    <text x="820.0" y="69" text-anchor="end" class="kpi-val" fill="#ffa657">122</text>
   </g>
   <text x="60.7" y="96" class="month">Dec</text>
 <text x="119.5" y="96" class="month">Jan</text>
@@ -436,7 +436,7 @@
 <rect class="cell" x="810.4" y="133.4" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.659s"/>
 <rect class="cell" x="810.4" y="148.1" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.661s"/>
 <rect class="cell" x="810.4" y="162.8" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#39d353" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.662s"/>
-<rect class="cell" x="810.4" y="177.5" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#161b22" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.664s"/>
+<rect class="cell" x="810.4" y="177.5" width="11.5" height="11.5" rx="2.5" ry="2.5" fill="#0e4429" stroke="#1b2028" stroke-width="0.6" style="animation-delay:0.664s"/>
 
   <text x="24" y="233" class="footer">Synced from GitHub calendar · 2026-11-27</text>
   <text x="724" y="233" class="legend-label">Less</text>
