@@ -16,29 +16,29 @@
     "languages": [
       {
         "name": "Python",
-        "pct": 46.9
+        "pct": 47.9
       },
       {
         "name": "JavaScript",
-        "pct": 32.6
+        "pct": 32.1
       },
       {
         "name": "TypeScript",
-        "pct": 9.2
+        "pct": 9.1
       },
       {
         "name": "HTML",
-        "pct": 4.9
+        "pct": 4.8
       },
       {
         "name": "CSS",
-        "pct": 3.8
+        "pct": 3.7
       },
       {
         "name": "Jupyter Notebook",
-        "pct": 1.1
+        "pct": 1.0
       }
     ]
   },
-  "updated_at": "2026-11-26T17:07:28Z"
+  "updated_at": "2026-11-27T02:51:49Z"
 }
